@@ -1,6 +1,6 @@
 # swift-project-architecture
 
-Start a new swift project with this architecture.
+打造一个 iOS 项目的初始模版，新项目可以直接套用。
 
 ## 工程结构
 
@@ -18,6 +18,25 @@ Start a new swift project with this architecture.
     └── Utils # 工具目录
 ```
 
+## 功能概要
+
+- CocoaPod 依赖管理
+- 明确工程结构
+- SwiftLint
+
+## 诊断
+
+### 编译警告
+
+在 `Built Setting` 的 `Other Swift Flags` 中添加 `-warnings-as-errors`，作用是把所有的警告当作错误来处理。不需要的话删掉添加的设置即可。
+
 ## TODO
 
-- [ ] 添加 Fastlane
+- [ ] 添加 Fastlane
+
+## 参考
+
+- [iOS Good Practices](https://github.com/futurice/ios-good-practices)
+- [Clean Swift Architecture](https://clean-swift.com/clean-swift-ios-architecture)
+- [SwiftLint](https://github.com/realm/SwiftLint)
+- [Swift Code Naming](https://swift.org/documentation/api-design-guidelines/)
