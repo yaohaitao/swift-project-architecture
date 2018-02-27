@@ -109,6 +109,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		32A23E08346748F1793F899C5FF672C1 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
 		3939643F79C0DE5D71F7C9ADFD5050BF /* Pods-SwiftArchitecture */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +145,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */,
 				29D9F87802D792D415EA71848796225A /* Products */,
 				D95ABC4353C7E262536FE8A0B8D5339B /* Targets Support Files */,
 			);
@@ -163,6 +172,14 @@
 			);
 			name = "Pods-SwiftArchitectureTests";
 			path = "Target Support Files/Pods-SwiftArchitectureTests";
+			sourceTree = "<group>";
+		};
+		9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A23E08346748F1793F899C5FF672C1 /* SwiftLint */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		AE5C84F19CB8E17CE3D376CA8C9F3D70 /* Pods-SwiftArchitectureUITests */ = {

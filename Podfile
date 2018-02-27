@@ -8,6 +8,7 @@ target 'SwiftArchitecture' do
   use_frameworks!
 
   # Pods for SwiftArchitecture
+  pod 'SwiftLint'
 
   target 'SwiftArchitectureTests' do
     inherit! :search_paths
