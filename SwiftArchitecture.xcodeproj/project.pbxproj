@@ -661,12 +661,15 @@
 			baseConfigurationReference = 98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -768,12 +771,15 @@
 			baseConfigurationReference = A96CCE228D1E0712513F1465 /* Pods-SwiftArchitecture.debug(continuous integration).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -875,12 +881,15 @@
 			baseConfigurationReference = 742143FE9AEF57F71A8B08C9 /* Pods-SwiftArchitecture.debug(testing).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -975,12 +984,15 @@
 			baseConfigurationReference = C84357B3D50D36AD2C4D0A3C /* Pods-SwiftArchitecture.release(staging).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1075,12 +1087,15 @@
 			baseConfigurationReference = 733614FC86B2E2D781136D12 /* Pods-SwiftArchitecture.release(production).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
+				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
