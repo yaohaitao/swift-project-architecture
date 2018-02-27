@@ -61,6 +61,7 @@
 		796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureUITests.swift; sourceTree = "<group>"; };
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79BC99752045369200BD01E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftArchitecture-Bridging-Header.h"; sourceTree = "<group>"; };
 		82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED0FC00C92199149080CFC /* Pods-SwiftArchitectureTests.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.release(staging).xcconfig"; sourceTree = "<group>"; };
 		98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(development).xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 				796006C82045211500E05B5E /* Assets.xcassets */,
 				796006CA2045211500E05B5E /* LaunchScreen.storyboard */,
 				796006CD2045211500E05B5E /* Info.plist */,
+				79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */,
 			);
 			path = SwiftArchitecture;
 			sourceTree = "<group>";

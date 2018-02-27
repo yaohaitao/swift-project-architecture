@@ -17,3 +17,7 @@ Start a new swift project with this architecture.
     │       └── MainViewController.swift
     └── Utils # 工具目录
 ```
+
+## TODO
+
+- [ ] 添加 Fastlane
