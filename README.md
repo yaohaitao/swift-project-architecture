@@ -23,7 +23,6 @@
     ├── Services # 数据操作目录
     ├── Scenes # 场景目录
     │   └── Main # 具体场景目录
-    │       └── MainViewController.swift
     └── Utils # 工具目录
 ```
 
