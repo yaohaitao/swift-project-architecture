@@ -2,6 +2,14 @@
 
 打造一个 iOS 项目的初始模版，新项目可以直接套用。
 
+## 功能概要
+
+- 使用 CocoaPod 依赖管理
+- 工程结构优化
+- 配置文件**结构**优化
+- SwiftLint 代码检查工具，默认开启
+- DefaultsKit 简单方便的 UserDefaults 操作工具
+
 ## 工程结构
 
 ```sh
@@ -18,12 +26,6 @@
     │       └── MainViewController.swift
     └── Utils # 工具目录
 ```
-
-## 功能概要
-
-- CocoaPod 依赖管理
-- 明确工程结构
-- SwiftLint
 
 ## 诊断
 
@@ -50,6 +52,7 @@
 - [ ] 添加 Fastlane
 - [ ] 添加统计框架
 - [ ] 添加日志记录组件
+- [ ] 添加 MVVM 模式
 
 ## 参考
 
@@ -58,4 +61,5 @@
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - [Swift Code Naming](https://swift.org/documentation/api-design-guidelines/)
 - [用 xcconfig 文件配置 iOS 环境变量](https://www.jianshu.com/p/9b8bc8351223)
+- [DefaultsKit使用说明](https://github.com/nmdias/DefaultsKit/blob/master/README.zh-CN.md)
 
