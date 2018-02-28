@@ -2,9 +2,9 @@
 
 打造一个 iOS 项目的初始模版，新项目可以直接套用。
 
-## 功能概要
+## 功能概要
 
-- 使用 CocoaPod 依赖管理
+- 使用 CocoaPod 依赖管理
 - 工程结构优化
 - 配置文件**结构**优化
 - SwiftLint 代码检查工具，默认开启
@@ -31,13 +31,13 @@
 
 ### 编译警告
 
-在 `Targets - Built Settings` 的 `Other Swift Flags` 中添加 `-warnings-as-errors`，作用是把所有的警告当作错误来处理。不需要的话删掉添加的设置即可。
+在 `Targets - Built Settings` 的 `Other Swift Flags` 中添加 `-warnings-as-errors`，作用是把所有的警告当作错误来处理。不需要的话删掉添加的设置即可。
 
 ### 静态分析器
 
 > 电脑性能不够或者嫌慢可以关掉（不推荐）
 
-在 `Built Setting` 的 `Static Analyzer` 中，开启 `Analyze during 'Build'` 设置，让每次编译构建时都运行浅层的代码分析。同时将 `Mode of Analysis for 'Analyze'` 设置为 `Shallow`，`Mode of Analysis for 'Build'` 设置为 `Deep`。
+在 `Built Setting` 的 `Static Analyzer` 中，开启 `Analyze during 'Build'` 设置，让每次编译构建时都运行浅层的代码分析。同时将 `Mode of Analysis for 'Analyze'` 设置为 `Shallow`，`Mode of Analysis for 'Build'` 设置为 `Deep`。
 
 ## 编译配置
 
@@ -54,9 +54,9 @@
 - [ ] 添加日志记录组件
 - [ ] 添加 MVVM 模式
 
-## 参考
+## 参考
 
-- [iOS Good Practices](https://github.com/futurice/ios-good-practices)
+- [iOS Good Practices](https://github.com/futurice/ios-good-practices)
 - [Clean Swift Architecture](https://clean-swift.com/clean-swift-ios-architecture)
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - [Swift Code Naming](https://swift.org/documentation/api-design-guidelines/)
