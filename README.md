@@ -9,7 +9,7 @@
 ├── Configurations # 存放配置
 └── SwiftArchitecture # 项目目录
     ├── AppDelegate.swift
-    ├── Assets.xcassets # 资源文件目录
+    ├── Resources # 资源文件目录
     ├── Common # 公共数据目录
     ├── Models # 实体目录
     ├── Services # 数据操作目录

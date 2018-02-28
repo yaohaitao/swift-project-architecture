@@ -30,8 +30,6 @@
 
 /* Begin PBXFileReference section */
 		335D32A0B6D0CCF1453673F8 /* Pods_SwiftArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BD797FA7BA2E4D3A000D570 /* Pods-SwiftArchitectureUITests.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureUITests.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests.debug(development).xcconfig"; sourceTree = "<group>"; };
-		40EE4479B354704D0E025285 /* Pods-SwiftArchitectureUITests.debug(continuous integration).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureUITests.debug(continuous integration).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests.debug(continuous integration).xcconfig"; sourceTree = "<group>"; };
 		543C2F961492C96807ECFA10 /* Pods_SwiftArchitectureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitectureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE986568361AB75FF1F5E6E /* Pods-SwiftArchitectureTests.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.release(production).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.release(production).xcconfig"; sourceTree = "<group>"; };
 		733614FC86B2E2D781136D12 /* Pods-SwiftArchitecture.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.release(production).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.release(production).xcconfig"; sourceTree = "<group>"; };
@@ -61,12 +59,9 @@
 		82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED0FC00C92199149080CFC /* Pods-SwiftArchitectureTests.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.release(staging).xcconfig"; sourceTree = "<group>"; };
 		98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(development).xcconfig"; sourceTree = "<group>"; };
-		9C3C9AC035784C0D935BA1DD /* Pods-SwiftArchitectureUITests.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureUITests.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests.release(staging).xcconfig"; sourceTree = "<group>"; };
 		9D5E74A88EEA2CDACB3C261C /* Pods-SwiftArchitectureTests.debug(continuous integration).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.debug(continuous integration).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.debug(continuous integration).xcconfig"; sourceTree = "<group>"; };
 		A96CCE228D1E0712513F1465 /* Pods-SwiftArchitecture.debug(continuous integration).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(continuous integration).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(continuous integration).xcconfig"; sourceTree = "<group>"; };
 		C84357B3D50D36AD2C4D0A3C /* Pods-SwiftArchitecture.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.release(staging).xcconfig"; sourceTree = "<group>"; };
-		D5EF462812471768FA04C9CC /* Pods-SwiftArchitectureUITests.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureUITests.release(production).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests.release(production).xcconfig"; sourceTree = "<group>"; };
-		F3A4517F5F4E381DD5D454D0 /* Pods-SwiftArchitectureUITests.debug(testing).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureUITests.debug(testing).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests.debug(testing).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +97,6 @@
 				73726AFAD96C41A7BEF7E8AC /* Pods-SwiftArchitectureTests.debug(testing).xcconfig */,
 				8BED0FC00C92199149080CFC /* Pods-SwiftArchitectureTests.release(staging).xcconfig */,
 				6CE986568361AB75FF1F5E6E /* Pods-SwiftArchitectureTests.release(production).xcconfig */,
-				3BD797FA7BA2E4D3A000D570 /* Pods-SwiftArchitectureUITests.debug(development).xcconfig */,
-				40EE4479B354704D0E025285 /* Pods-SwiftArchitectureUITests.debug(continuous integration).xcconfig */,
-				F3A4517F5F4E381DD5D454D0 /* Pods-SwiftArchitectureUITests.debug(testing).xcconfig */,
-				9C3C9AC035784C0D935BA1DD /* Pods-SwiftArchitectureUITests.release(staging).xcconfig */,
-				D5EF462812471768FA04C9CC /* Pods-SwiftArchitectureUITests.release(production).xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -136,17 +126,13 @@
 		796006C02045211500E05B5E /* SwiftArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				79BC9985204657B800BD01E0 /* Resources */,
 				79BC996F204531CA00BD01E0 /* Common */,
 				79BC996E204531C300BD01E0 /* Models */,
 				79BC996D204531BB00BD01E0 /* Services */,
 				79BC996C2045318C00BD01E0 /* Scenes */,
 				79BC996B2045318300BD01E0 /* Utils */,
 				796006C12045211500E05B5E /* AppDelegate.swift */,
-				796006C52045211500E05B5E /* Main.storyboard */,
-				796006C82045211500E05B5E /* Assets.xcassets */,
-				796006CA2045211500E05B5E /* LaunchScreen.storyboard */,
-				796006CD2045211500E05B5E /* Info.plist */,
-				79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */,
 			);
 			path = SwiftArchitecture;
 			sourceTree = "<group>";
@@ -225,6 +211,18 @@
 				79BC997F2045583400BD01E0 /* Production.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		79BC9985204657B800BD01E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				796006C52045211500E05B5E /* Main.storyboard */,
+				796006C82045211500E05B5E /* Assets.xcassets */,
+				796006CA2045211500E05B5E /* LaunchScreen.storyboard */,
+				796006CD2045211500E05B5E /* Info.plist */,
+				79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F6EBA59982C789456260422C /* Frameworks */ = {
@@ -553,12 +551,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = "Debug(Development)";
@@ -571,7 +571,7 @@
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
+				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
@@ -648,12 +648,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = "Debug(Continuous Integration)";
@@ -666,7 +668,7 @@
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
+				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
@@ -743,12 +745,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = "Debug(Testing)";
@@ -761,7 +765,7 @@
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
+				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
@@ -832,10 +836,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -849,7 +855,7 @@
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
+				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -919,10 +925,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -936,7 +944,7 @@
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
+				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";

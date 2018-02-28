@@ -7,3 +7,6 @@
 //
 
 // 通用环境配置
+
+OBJECTIVEC_BRIDGING_HEADER = $(SRCROOT)/SwiftArchitecture/Resources/SwiftArchitecture-Bridging-Header.h
+INFO_PLIST_FILE = $(SRCROOT)/SwiftArchitecture/Resources/Info.plist
