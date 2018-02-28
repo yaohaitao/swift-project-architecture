@@ -132,6 +132,32 @@ strip_invalid_archs() {
   STRIP_BINARY_RETVAL=1
 }
 
+
+if [[ "$CONFIGURATION" == "Debug(Development)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
+if [[ "$CONFIGURATION" == "Debug(Continuous Integration)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
+if [[ "$CONFIGURATION" == "Debug(Testing)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
+if [[ "$CONFIGURATION" == "Release(Staging)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
+if [[ "$CONFIGURATION" == "Release(Production)" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
