@@ -62,6 +62,12 @@
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79BC99752045369200BD01E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftArchitecture-Bridging-Header.h"; sourceTree = "<group>"; };
+		79BC997A2045565900BD01E0 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		79BC997B204556C500BD01E0 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		79BC997C204557B600BD01E0 /* ContinuousIntegration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ContinuousIntegration.xcconfig; sourceTree = "<group>"; };
+		79BC997D204557EB00BD01E0 /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
+		79BC997E2045580700BD01E0 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		79BC997F2045583400BD01E0 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED0FC00C92199149080CFC /* Pods-SwiftArchitectureTests.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.release(staging).xcconfig"; sourceTree = "<group>"; };
 		98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(development).xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		796006B52045211500E05B5E = {
 			isa = PBXGroup;
 			children = (
+				79BC99792045557C00BD01E0 /* Configurations */,
 				796006C02045211500E05B5E /* SwiftArchitecture */,
 				796006D52045211600E05B5E /* SwiftArchitectureTests */,
 				796006E02045211600E05B5E /* SwiftArchitectureUITests */,
@@ -224,6 +231,19 @@
 				796006C32045211500E05B5E /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		79BC99792045557C00BD01E0 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				79BC997A2045565900BD01E0 /* Common.xcconfig */,
+				79BC997B204556C500BD01E0 /* Development.xcconfig */,
+				79BC997C204557B600BD01E0 /* ContinuousIntegration.xcconfig */,
+				79BC997D204557EB00BD01E0 /* Testing.xcconfig */,
+				79BC997E2045580700BD01E0 /* Staging.xcconfig */,
+				79BC997F2045583400BD01E0 /* Production.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		F6EBA59982C789456260422C /* Frameworks */ = {
@@ -650,6 +670,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -658,7 +679,7 @@
 		};
 		79E60FE52045304F0022483B /* Debug(Development) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */;
+			baseConfigurationReference = 79BC997B204556C500BD01E0 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -666,8 +687,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
+				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
@@ -760,6 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -768,7 +790,7 @@
 		};
 		79E60FE92045305F0022483B /* Debug(Continuous Integration) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A96CCE228D1E0712513F1465 /* Pods-SwiftArchitecture.debug(continuous integration).xcconfig */;
+			baseConfigurationReference = 79BC997C204557B600BD01E0 /* ContinuousIntegration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -776,8 +798,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
+				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
@@ -870,6 +892,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -878,7 +901,7 @@
 		};
 		79E60FED2045306A0022483B /* Debug(Testing) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 742143FE9AEF57F71A8B08C9 /* Pods-SwiftArchitecture.debug(testing).xcconfig */;
+			baseConfigurationReference = 79BC997D204557EB00BD01E0 /* Testing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -886,8 +909,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
+				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
@@ -973,6 +996,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -981,7 +1005,7 @@
 		};
 		79E60FF52045308E0022483B /* Release(Staging) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C84357B3D50D36AD2C4D0A3C /* Pods-SwiftArchitecture.release(staging).xcconfig */;
+			baseConfigurationReference = 79BC997E2045580700BD01E0 /* Staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -989,8 +1013,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
+				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
@@ -1076,6 +1099,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -1084,7 +1108,7 @@
 		};
 		79E60FF92045309A0022483B /* Release(Production) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 733614FC86B2E2D781136D12 /* Pods-SwiftArchitecture.release(production).xcconfig */;
+			baseConfigurationReference = 79BC997F2045583400BD01E0 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_STATIC_ANALYZER_MODE = deep;
@@ -1092,8 +1116,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitecture;
+				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
