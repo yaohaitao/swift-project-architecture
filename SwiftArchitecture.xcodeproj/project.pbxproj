@@ -9,26 +9,17 @@
 /* Begin PBXBuildFile section */
 		0C9FA5D425F9D0222CE17FA9 /* Pods_SwiftArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */; };
 		6E9A648845B6BB6F7CC17B2C /* Pods_SwiftArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335D32A0B6D0CCF1453673F8 /* Pods_SwiftArchitecture.framework */; };
-		73DE0CD4A055980A0AB92BB8 /* Pods_SwiftArchitectureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543C2F961492C96807ECFA10 /* Pods_SwiftArchitectureUITests.framework */; };
 		796006C22045211500E05B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006C12045211500E05B5E /* AppDelegate.swift */; };
 		796006C42045211500E05B5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006C32045211500E05B5E /* MainViewController.swift */; };
 		796006C72045211500E05B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796006C52045211500E05B5E /* Main.storyboard */; };
 		796006C92045211500E05B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796006C82045211500E05B5E /* Assets.xcassets */; };
 		796006CC2045211500E05B5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796006CA2045211500E05B5E /* LaunchScreen.storyboard */; };
 		796006D72045211600E05B5E /* SwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006D62045211600E05B5E /* SwiftArchitectureTests.swift */; };
-		796006E22045211600E05B5E /* SwiftArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */; };
 		79BC99762045369200BD01E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC99752045369200BD01E0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		796006D32045211600E05B5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 796006B62045211500E05B5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 796006BD2045211500E05B5E;
-			remoteInfo = SwiftArchitecture;
-		};
-		796006DE2045211600E05B5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 796006B62045211500E05B5E /* Project object */;
 			proxyType = 1;
@@ -57,7 +48,6 @@
 		796006D22045211600E05B5E /* SwiftArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796006D62045211600E05B5E /* SwiftArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTests.swift; sourceTree = "<group>"; };
 		796006D82045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		796006DD2045211600E05B5E /* SwiftArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureUITests.swift; sourceTree = "<group>"; };
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79BC99752045369200BD01E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -93,14 +83,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C9FA5D425F9D0222CE17FA9 /* Pods_SwiftArchitectureTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		796006DA2045211600E05B5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73DE0CD4A055980A0AB92BB8 /* Pods_SwiftArchitectureUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +129,6 @@
 			children = (
 				796006BE2045211500E05B5E /* SwiftArchitecture.app */,
 				796006D22045211600E05B5E /* SwiftArchitectureTests.xctest */,
-				796006DD2045211600E05B5E /* SwiftArchitectureUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,27 +282,6 @@
 			productReference = 796006D22045211600E05B5E /* SwiftArchitectureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		796006DC2045211600E05B5E /* SwiftArchitectureUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 796006EC2045211600E05B5E /* Build configuration list for PBXNativeTarget "SwiftArchitectureUITests" */;
-			buildPhases = (
-				8C703F724E863DA4EB53F529 /* [CP] Check Pods Manifest.lock */,
-				796006D92045211600E05B5E /* Sources */,
-				796006DA2045211600E05B5E /* Frameworks */,
-				796006DB2045211600E05B5E /* Resources */,
-				F56B672238A634F961A657EA /* [CP] Embed Pods Frameworks */,
-				B6CCB85EA72E0424850A9259 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				796006DF2045211600E05B5E /* PBXTargetDependency */,
-			);
-			name = SwiftArchitectureUITests;
-			productName = SwiftArchitectureUITests;
-			productReference = 796006DD2045211600E05B5E /* SwiftArchitectureUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,11 +297,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					796006D12045211600E05B5E = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 796006BD2045211500E05B5E;
-					};
-					796006DC2045211600E05B5E = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 796006BD2045211500E05B5E;
@@ -363,7 +318,6 @@
 			targets = (
 				796006BD2045211500E05B5E /* SwiftArchitecture */,
 				796006D12045211600E05B5E /* SwiftArchitectureTests */,
-				796006DC2045211600E05B5E /* SwiftArchitectureUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -380,13 +334,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		796006D02045211600E05B5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		796006DB2045211600E05B5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,54 +453,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which ${PODS_ROOT}/SwiftLint/swiftlint >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n    echo \"warning: Please add >pod 'SwiftLint'< in your Podfile\"\nfi";
 		};
-		8C703F724E863DA4EB53F529 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftArchitectureUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6CCB85EA72E0424850A9259 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F56B672238A634F961A657EA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftArchitectureUITests/Pods-SwiftArchitectureUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -575,14 +474,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		796006D92045211600E05B5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				796006E22045211600E05B5E /* SwiftArchitectureUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -590,11 +481,6 @@
 			isa = PBXTargetDependency;
 			target = 796006BD2045211500E05B5E /* SwiftArchitecture */;
 			targetProxy = 796006D32045211600E05B5E /* PBXContainerItemProxy */;
-		};
-		796006DF2045211600E05B5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 796006BD2045211500E05B5E /* SwiftArchitecture */;
-			targetProxy = 796006DE2045211600E05B5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -713,22 +599,6 @@
 			};
 			name = "Debug(Development)";
 		};
-		79E60FE72045304F0022483B /* Debug(Development) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BD797FA7BA2E4D3A000D570 /* Pods-SwiftArchitectureUITests.debug(development).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitectureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitectureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftArchitecture;
-			};
-			name = "Debug(Development)";
-		};
 		79E60FE82045305F0022483B /* Debug(Continuous Integration) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -821,22 +691,6 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftArchitecture.app/SwiftArchitecture";
-			};
-			name = "Debug(Continuous Integration)";
-		};
-		79E60FEB2045305F0022483B /* Debug(Continuous Integration) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40EE4479B354704D0E025285 /* Pods-SwiftArchitectureUITests.debug(continuous integration).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitectureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitectureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftArchitecture;
 			};
 			name = "Debug(Continuous Integration)";
 		};
@@ -935,22 +789,6 @@
 			};
 			name = "Debug(Testing)";
 		};
-		79E60FEF2045306A0022483B /* Debug(Testing) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3A4517F5F4E381DD5D454D0 /* Pods-SwiftArchitectureUITests.debug(testing).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitectureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitectureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftArchitecture;
-			};
-			name = "Debug(Testing)";
-		};
 		79E60FF42045308E0022483B /* Release(Staging) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1035,22 +873,6 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftArchitecture.app/SwiftArchitecture";
-			};
-			name = "Release(Staging)";
-		};
-		79E60FF72045308E0022483B /* Release(Staging) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C3C9AC035784C0D935BA1DD /* Pods-SwiftArchitectureUITests.release(staging).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitectureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitectureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftArchitecture;
 			};
 			name = "Release(Staging)";
 		};
@@ -1141,22 +963,6 @@
 			};
 			name = "Release(Production)";
 		};
-		79E60FFB2045309A0022483B /* Release(Production) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5EF462812471768FA04C9CC /* Pods-SwiftArchitectureUITests.release(production).xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftArchitectureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao.SwiftArchitectureUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftArchitecture;
-			};
-			name = "Release(Production)";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1192,18 +998,6 @@
 				79E60FEE2045306A0022483B /* Debug(Testing) */,
 				79E60FF62045308E0022483B /* Release(Staging) */,
 				79E60FFA2045309A0022483B /* Release(Production) */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Debug(Development)";
-		};
-		796006EC2045211600E05B5E /* Build configuration list for PBXNativeTarget "SwiftArchitectureUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79E60FE72045304F0022483B /* Debug(Development) */,
-				79E60FEB2045305F0022483B /* Debug(Continuous Integration) */,
-				79E60FEF2045306A0022483B /* Debug(Testing) */,
-				79E60FF72045308E0022483B /* Release(Staging) */,
-				79E60FFB2045309A0022483B /* Release(Production) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Debug(Development)";

@@ -15,9 +15,4 @@ target 'SwiftArchitecture' do
     # Pods for testing
   end
 
-  target 'SwiftArchitectureUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
