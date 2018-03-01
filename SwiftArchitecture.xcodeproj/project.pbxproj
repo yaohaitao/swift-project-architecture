@@ -14,7 +14,8 @@
 		796006C92045211500E05B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796006C82045211500E05B5E /* Assets.xcassets */; };
 		796006CC2045211500E05B5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796006CA2045211500E05B5E /* LaunchScreen.storyboard */; };
 		796006D72045211600E05B5E /* SwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006D62045211600E05B5E /* SwiftArchitectureTests.swift */; };
-		799E06042047839100BD75F0 /* ReusableViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E06032047839100BD75F0 /* ReusableViewCreator.swift */; };
+		799E06042047839100BD75F0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E06032047839100BD75F0 /* Reusable.swift */; };
+		799E06082047979000BD75F0 /* UIStoryboard+InstantiateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E06072047979000BD75F0 /* UIStoryboard+InstantiateVC.swift */; };
 		79BC99762045369200BD01E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC99752045369200BD01E0 /* Constants.swift */; };
 		79BC998920466F4400BD01E0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC998820466F4400BD01E0 /* Defaults.swift */; };
 /* End PBXBuildFile section */
@@ -48,7 +49,8 @@
 		796006D82045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureUITests.swift; sourceTree = "<group>"; };
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		799E06032047839100BD75F0 /* ReusableViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCreator.swift; sourceTree = "<group>"; };
+		799E06032047839100BD75F0 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		799E06072047979000BD75F0 /* UIStoryboard+InstantiateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+InstantiateVC.swift"; sourceTree = "<group>"; };
 		79BC99752045369200BD01E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftArchitecture-Bridging-Header.h"; sourceTree = "<group>"; };
 		79BC997A2045565900BD01E0 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 		796006C02045211500E05B5E /* SwiftArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				799E06062047974400BD75F0 /* Protocols */,
+				799E0605204796EF00BD75F0 /* Extensions */,
 				79BC9985204657B800BD01E0 /* Resources */,
 				79BC996F204531CA00BD01E0 /* Common */,
 				79BC996E204531C300BD01E0 /* Models */,
@@ -157,11 +161,26 @@
 			path = SwiftArchitectureUITests;
 			sourceTree = "<group>";
 		};
+		799E0605204796EF00BD75F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				799E06072047979000BD75F0 /* UIStoryboard+InstantiateVC.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		799E06062047974400BD75F0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				799E06032047839100BD75F0 /* Reusable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		79BC996B2045318300BD01E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				79BC998820466F4400BD01E0 /* Defaults.swift */,
-				799E06032047839100BD75F0 /* ReusableViewCreator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -474,8 +493,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				79BC998920466F4400BD01E0 /* Defaults.swift in Sources */,
+				799E06082047979000BD75F0 /* UIStoryboard+InstantiateVC.swift in Sources */,
 				796006C22045211500E05B5E /* AppDelegate.swift in Sources */,
-				799E06042047839100BD75F0 /* ReusableViewCreator.swift in Sources */,
+				799E06042047839100BD75F0 /* Reusable.swift in Sources */,
 				79BC99762045369200BD01E0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
