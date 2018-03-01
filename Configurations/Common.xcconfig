@@ -8,5 +8,10 @@
 
 // 通用环境配置
 
-OBJECTIVEC_BRIDGING_HEADER = $(SRCROOT)/SwiftArchitecture/Resources/SwiftArchitecture-Bridging-Header.h
-INFO_PLIST_FILE = $(SRCROOT)/SwiftArchitecture/Resources/Info.plist
+// MARK: - 目录位置
+APP_DIR = $(SRCROOT)/SwiftArchitecture
+RESOURCES_DIR = ${APP_DIR}/Resources
+
+// MARK: - 文件位置
+OBJECTIVEC_BRIDGING_HEADER = ${RESOURCES_DIR}/SwiftArchitecture-Bridging-Header.h
+INFO_PLIST_FILE = ${RESOURCES_DIR}/Info.plist
