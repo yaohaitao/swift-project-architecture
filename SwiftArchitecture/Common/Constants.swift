@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - 环境信息
+
 private enum Enviroment {
     case development
     case continuousIntegration
@@ -33,7 +34,6 @@ private enum Enviroment {
         #endif
     }()
 }
- // */
 
 // MARK: - 配置信息
 
