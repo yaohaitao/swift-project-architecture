@@ -20,6 +20,8 @@
     ├── Resources # 资源文件目录
     ├── Common # 公共数据目录
     ├── Models # 实体目录
+    ├── Network # 实现网络操作
+    │   └── APIs # 对每个 API 进行封装
     ├── Services # 数据操作目录
     ├── Scenes # 场景目录
     │   └── Main # 具体场景目录

@@ -8,5 +8,24 @@
 
 // 通用环境配置
 
-OBJECTIVEC_BRIDGING_HEADER = $(SRCROOT)/SwiftArchitecture/Resources/SwiftArchitecture-Bridging-Header.h
-INFO_PLIST_FILE = $(SRCROOT)/SwiftArchitecture/Resources/Info.plist
+// MARK: - 目录位置
+APP_DIR = $(SRCROOT)/SwiftArchitecture
+RESOURCES_DIR = ${APP_DIR}/Resources
+
+// MARK: - 文件位置
+OBJECTIVEC_BRIDGING_HEADER = ${RESOURCES_DIR}/SwiftArchitecture-Bridging-Header.h
+INFO_PLIST_FILE = ${RESOURCES_DIR}/Info.plist
+
+// MARK: - 配置
+
+// 静态分析器
+RUN_CLANG_STATIC_ANALYZER = YES
+CLANG_STATIC_ANALYZER_MODE = deep
+CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = shallow
+
+
+OTHER_SWIFT_FLAGS = $(inherited) ${PODS_FLAGS} ${OPEN_WARNINGS_AS_ERRORS} -D${CONFIG_FLAG}
+// 把所有的警告当作错误来处理
+OPEN_WARNINGS_AS_ERRORS = -warnings-as-errors
+// Pods flags
+PODS_FLAGS = "-D" "COCOAPODS"

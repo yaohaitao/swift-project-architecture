@@ -14,6 +14,10 @@
 		796006C92045211500E05B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796006C82045211500E05B5E /* Assets.xcassets */; };
 		796006CC2045211500E05B5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796006CA2045211500E05B5E /* LaunchScreen.storyboard */; };
 		796006D72045211600E05B5E /* SwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006D62045211600E05B5E /* SwiftArchitectureTests.swift */; };
+		799E062B2048D1E900BD75F0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062A2048D1E900BD75F0 /* Post.swift */; };
+		799E062D2048D1FC00BD75F0 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062C2048D1FC00BD75F0 /* PostService.swift */; };
+		799E062F2048D21700BD75F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062E2048D21700BD75F0 /* Network.swift */; };
+		799E06322048D22B00BD75F0 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E06312048D22B00BD75F0 /* PostAPI.swift */; };
 		79BC99762045369200BD01E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC99752045369200BD01E0 /* Constants.swift */; };
 		79BC998920466F4400BD01E0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC998820466F4400BD01E0 /* Defaults.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,10 @@
 		796006D82045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureUITests.swift; sourceTree = "<group>"; };
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799E062A2048D1E900BD75F0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		799E062C2048D1FC00BD75F0 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		799E062E2048D21700BD75F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		799E06312048D22B00BD75F0 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		79BC99752045369200BD01E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		79BC99782045418800BD01E0 /* SwiftArchitecture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftArchitecture-Bridging-Header.h"; sourceTree = "<group>"; };
 		79BC997A2045565900BD01E0 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
@@ -128,8 +136,9 @@
 			children = (
 				79BC9985204657B800BD01E0 /* Resources */,
 				79BC996F204531CA00BD01E0 /* Common */,
-				79BC996E204531C300BD01E0 /* Models */,
-				79BC996D204531BB00BD01E0 /* Services */,
+				799E06292048D19400BD75F0 /* Models */,
+				799E06262048D12F00BD75F0 /* Network */,
+				799E06282048D14800BD75F0 /* Services */,
 				79BC996C2045318C00BD01E0 /* Scenes */,
 				79BC996B2045318300BD01E0 /* Utils */,
 				796006C12045211500E05B5E /* AppDelegate.swift */,
@@ -155,6 +164,39 @@
 			path = SwiftArchitectureUITests;
 			sourceTree = "<group>";
 		};
+		799E06262048D12F00BD75F0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				799E06302048D21B00BD75F0 /* APIs */,
+				799E062E2048D21700BD75F0 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		799E06282048D14800BD75F0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				799E062C2048D1FC00BD75F0 /* PostService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		799E06292048D19400BD75F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				799E062A2048D1E900BD75F0 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		799E06302048D21B00BD75F0 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				799E06312048D22B00BD75F0 /* PostAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
 		79BC996B2045318300BD01E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,20 +211,6 @@
 				79BC9970204531D800BD01E0 /* Main */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		79BC996D204531BB00BD01E0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		79BC996E204531C300BD01E0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		79BC996F204531CA00BD01E0 /* Common */ = {
@@ -458,9 +486,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799E062D2048D1FC00BD75F0 /* PostService.swift in Sources */,
+				799E06322048D22B00BD75F0 /* PostAPI.swift in Sources */,
 				79BC998920466F4400BD01E0 /* Defaults.swift in Sources */,
+				799E062F2048D21700BD75F0 /* Network.swift in Sources */,
 				796006C22045211500E05B5E /* AppDelegate.swift in Sources */,
 				79BC99762045369200BD01E0 /* Constants.swift in Sources */,
+				799E062B2048D1E900BD75F0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +587,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
@@ -573,10 +605,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,7 +684,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
@@ -670,10 +702,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -749,7 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
@@ -767,10 +799,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-warnings-as-errors $(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -839,7 +871,7 @@
 				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -857,9 +889,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -928,7 +961,7 @@
 				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-D${CONFIG_FLAG}";
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "${OBJECTIVEC_BRIDGING_HEADER}";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -946,9 +979,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "${INFO_PLIST_FILE}";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = yaohaitao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
+				RUN_CLANG_STATIC_ANALYZER = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
