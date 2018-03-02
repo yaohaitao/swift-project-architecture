@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class PostService {
+
+    func listPosts() -> [Post] {
+
+        var posts: [Post] = []
+
+        for i in 1...5 {
+            posts.append(Post(body: "Post No.\(i) said that ...", title: "Post No.\(i)"))
+        }
+
+        return posts
+    }
+}
