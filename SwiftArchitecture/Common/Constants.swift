@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-// MARK: - 环境信息
+// MARK: - 环境
+
 private enum Enviroment {
     case development
     case continuousIntegration
@@ -33,15 +34,21 @@ private enum Enviroment {
         #endif
     }()
 }
- // */
 
-// MARK: - 配置信息
+// MARK: - 配置
 
 enum Config {
+    static let mainStoryboard = "Main"
+}
+
+// MARK: - URL
+
+enum URLs {
+
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:
-            return "https://development/"
+            return "http://localhost/SwiftArchitecture"
         case .continuousIntegration:
             return "https://continuousintegration/"
         case .testing:
@@ -52,9 +59,11 @@ enum Config {
             return "https://production/"
         }
     }()
+
+    static let postURL = URLs.baseURL + "/post"
 }
 
-// MARK: - 颜色信息
+// MARK: - 颜色
 
 enum Color {
     static let primaryColor = UIColor.black

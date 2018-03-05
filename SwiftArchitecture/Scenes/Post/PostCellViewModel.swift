@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PostCellViewModel {
+class PostCellViewModel {
     let title: String
     let subtitle: String
     let post: Post
@@ -16,6 +16,6 @@ final class PostCellViewModel {
     init (with post: Post) {
         self.post = post
         self.title = post.title
-        self.subtitle = post.body
+        self.subtitle = post.content
     }
 }

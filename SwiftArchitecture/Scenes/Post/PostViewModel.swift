@@ -8,41 +8,74 @@
 
 import UIKit
 
-protocol PostViewModelProtocol: UITableViewDataSource {
+//protocol PostViewModelProtocol:  {
+//
+//    var posts: [Post]? { get }
+//
+//    var postsDidChanged: ((PostViewModelProtocol) -> Void)? { get set }
+//
+//    init(postService: PostService,
+//         postNavigator: PostNavigator)
+//
+//    func loadPosts()
+//
+//}
 
-    var posts: [Post]? { get }
+class PostViewModel: NSObject {
 
-    var postsDidChanged: ((PostViewModelProtocol) -> Void)? { get set }
+    // MARK: - 变量声明
 
-    init(postService: PostService)
-
-    func loadPosts()
-
-}
-
-class PostViewModel: NSObject, PostViewModelProtocol {
-
-    private let postService: PostService
-
-    var posts: [Post]? {
+    private let service: PostService
+    private let navigator: PostNavigator
+    private weak var delegate: PostViewControllerDelegate?
+    private var posts: [Post]? {
         didSet {
-            self.postsDidChanged?(self)
+            guard
+                let oldValue = oldValue,
+                let newValue = posts
+            else {
+                delegate?.tableViewReloadData()
+                return
+            }
+
+            if oldValue.elementsEqual(newValue) {
+                return
+            }
+
+            if oldValue.count < newValue.count {
+                delegate?.tableViewReloadData()
+            }
         }
     }
 
-    var postsDidChanged: ((PostViewModelProtocol) -> Void)?
+    // MARK: - 初始化
 
-    required init(postService: PostService) {
-        self.postService = postService
+    required init(service: PostService, navigator: PostNavigator, delegate: PostViewControllerDelegate) {
+        self.service = service
+        self.navigator = navigator
+        self.delegate = delegate
     }
 
+    // MARK: - 公共方法
+
     func loadPosts() {
-       posts = postService.listPosts()
+       posts = service.listPosts()
+    }
+
+    // MARK: - 私有方法
+
+    private func getCurrentPost(of indexPath: IndexPath) -> Post {
+        guard let post = posts?[indexPath.row] else {
+            fatalError()
+        }
+        return post
     }
 
 }
 
-extension PostViewModel {
+// MARK: - Ext: Table View Data Source
+
+extension PostViewModel: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = posts?.count else { return 0 }
@@ -51,12 +84,28 @@ extension PostViewModel {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: PostCell.self, at: indexPath)
-        guard let post = posts?[indexPath.row] else {
-            fatalError()
-        }
+        let post = getCurrentPost(of: indexPath)
         let viewModel = PostCellViewModel(with: post)
         cell.bind(viewModel)
         return cell
     }
 
+}
+
+// MARK: - Ext: Table View Delegate
+
+extension PostViewModel: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = getCurrentPost(of: indexPath)
+        self.navigator.toPostDetailView(post)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            posts?.remove(at: indexPath.row)
+            delegate?.deleteRows(indexPaths: [indexPath])
+        }
+    }
 }

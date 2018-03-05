@@ -8,23 +8,28 @@
 
 import UIKit
 
+protocol PostViewControllerDelegate: class {
+
+    func tableViewReloadData()
+
+    func deleteRows(indexPaths: [IndexPath])
+}
+
 class PostViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel: PostViewModelProtocol! {
-        didSet {
-            self.viewModel.postsDidChanged = { _ in
-                self.tableView.reloadData()
-            }
-
-        }
-    }
+    var viewModel: PostViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         viewModel.loadPosts()
     }
 
@@ -33,5 +38,18 @@ class PostViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.dataSource = self.viewModel
+        tableView.delegate = self.viewModel
     }
+}
+
+extension PostViewController: PostViewControllerDelegate {
+
+    func tableViewReloadData() {
+        tableView.reloadData()
+    }
+
+    func deleteRows(indexPaths: [IndexPath]) {
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+
 }
