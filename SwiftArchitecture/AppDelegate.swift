@@ -20,18 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyBoard = UIStoryboard(name: Config.mainStoryboard, bundle: nil)
 
-        let postNavController = UINavigationController()
-        postNavController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
-        let postNavigator = PostNavigator(service: PostService(), navigationController: postNavController, storyBoard: storyBoard)
+        let postNavigationController = UINavigationController()
+        postNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
 
+        let postNavigator = PostNavigator(service: PostService(), navigationController: postNavigationController, storyBoard: storyBoard)
         postNavigator.toPostView()
 
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
-            postNavController
+            postNavigationController
         ]
-        window.rootViewController = tabBarController
 
+        window.rootViewController = tabBarController
         self.window = window
         return true
     }

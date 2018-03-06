@@ -11,22 +11,7 @@ import PromiseKit
 
 class PostService {
 
-//    private let api = NetworkProvider().makePostAPI()
     private let network = Network<Post>()
-
-//    var posts: [Post] = {
-//        var posts: [Post] = []
-//
-//        for i in 1...5 {
-//            posts.append(Post(postId: i, content: "Post No.\(i) said that ...", title: "Post No.\(i)"))
-//        }
-//
-//        return posts
-//    }()
-//
-//    func listPosts() -> [Post] {
-//        return posts
-//    }
 
     func getPosts() -> Promise<[Post]> {
         return network.getItems(url: URLs.postURL)
