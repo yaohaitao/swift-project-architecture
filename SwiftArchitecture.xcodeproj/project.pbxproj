@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C9FA5D425F9D0222CE17FA9 /* Pods_SwiftArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */; };
 		6E9A648845B6BB6F7CC17B2C /* Pods_SwiftArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335D32A0B6D0CCF1453673F8 /* Pods_SwiftArchitecture.framework */; };
-		79474A212048FEAA00CCE27D /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79474A202048FEAA00CCE27D /* Cache.swift */; };
-		79474A232048FF9F00CCE27D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79474A222048FF9F00CCE27D /* NetworkProvider.swift */; };
 		79474A2620492E0D00CCE27D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79474A2520492E0D00CCE27D /* PostDetailViewController.swift */; };
 		79474A2820492E2100CCE27D /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79474A2720492E2100CCE27D /* PostDetailViewModel.swift */; };
 		796006C22045211500E05B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006C12045211500E05B5E /* AppDelegate.swift */; };
@@ -20,6 +18,7 @@
 		796006D72045211600E05B5E /* SwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006D62045211600E05B5E /* SwiftArchitectureTests.swift */; };
 		799574B520493872009E518D /* PostNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574B420493872009E518D /* PostNavigator.swift */; };
 		799574B720493C90009E518D /* PostDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574B620493C90009E518D /* PostDetailNavigator.swift */; };
+		799574BD204CEFE3009E518D /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574BC204CEFE3009E518D /* Modelable.swift */; };
 		799E062B2048D1E900BD75F0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062A2048D1E900BD75F0 /* Post.swift */; };
 		799E062D2048D1FC00BD75F0 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062C2048D1FC00BD75F0 /* PostService.swift */; };
 		799E062F2048D21700BD75F0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E062E2048D21700BD75F0 /* Network.swift */; };
@@ -51,8 +50,6 @@
 		73726AFAD96C41A7BEF7E8AC /* Pods-SwiftArchitectureTests.debug(testing).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.debug(testing).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.debug(testing).xcconfig"; sourceTree = "<group>"; };
 		742143FE9AEF57F71A8B08C9 /* Pods-SwiftArchitecture.debug(testing).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(testing).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(testing).xcconfig"; sourceTree = "<group>"; };
 		745EE181055512FEB62E329E /* Pods-SwiftArchitectureTests.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.debug(development).xcconfig"; sourceTree = "<group>"; };
-		79474A202048FEAA00CCE27D /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		79474A222048FF9F00CCE27D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		79474A2520492E0D00CCE27D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		79474A2720492E2100CCE27D /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 		796006BE2045211500E05B5E /* SwiftArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +65,7 @@
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799574B420493872009E518D /* PostNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNavigator.swift; sourceTree = "<group>"; };
 		799574B620493C90009E518D /* PostDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailNavigator.swift; sourceTree = "<group>"; };
+		799574BC204CEFE3009E518D /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		799E062A2048D1E900BD75F0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		799E062C2048D1FC00BD75F0 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		799E062E2048D21700BD75F0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -201,8 +199,6 @@
 			children = (
 				799E06302048D21B00BD75F0 /* APIs */,
 				799E062E2048D21700BD75F0 /* Network.swift */,
-				79474A202048FEAA00CCE27D /* Cache.swift */,
-				79474A222048FF9F00CCE27D /* NetworkProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -248,6 +244,7 @@
 			children = (
 				79BC998820466F4400BD01E0 /* Defaults.swift */,
 				799E063B2048E0D100BD75F0 /* Reusable.swift */,
+				799574BC204CEFE3009E518D /* Modelable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,12 +482,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,12 +540,11 @@
 				799574B520493872009E518D /* PostNavigator.swift in Sources */,
 				799E063C2048E0D100BD75F0 /* Reusable.swift in Sources */,
 				799E062F2048D21700BD75F0 /* Network.swift in Sources */,
-				79474A212048FEAA00CCE27D /* Cache.swift in Sources */,
-				79474A232048FF9F00CCE27D /* NetworkProvider.swift in Sources */,
 				796006C22045211500E05B5E /* AppDelegate.swift in Sources */,
 				79474A2820492E2100CCE27D /* PostDetailViewModel.swift in Sources */,
 				799E063E2048E16A00BD75F0 /* PostViewModel.swift in Sources */,
 				799E06402048F32000BD75F0 /* PostCellViewModel.swift in Sources */,
+				799574BD204CEFE3009E518D /* Modelable.swift in Sources */,
 				79BC99762045369200BD01E0 /* Constants.swift in Sources */,
 				79474A2620492E0D00CCE27D /* PostDetailViewController.swift in Sources */,
 				799E062B2048D1E900BD75F0 /* Post.swift in Sources */,

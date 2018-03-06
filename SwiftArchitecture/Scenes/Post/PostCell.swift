@@ -15,7 +15,7 @@ class PostCell: UITableViewCell {
 
     func bind(_ viewModel: PostCellViewModel) {
         titleLabel.text = viewModel.title
-        subtitleLabel.text = viewModel.subtitle
+        subtitleLabel.text = viewModel.content
     }
 
 }

@@ -29,18 +29,11 @@ class PostDetailViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         view.endEditing(true)
-
-        guard let title = titleTextField.text,
-            let content = contentTextView.text else {
-                return
-        }
-
-        print("\(title):\(content)")
     }
 
     private func bind() {
-        titleTextField.text = viewModel.post.title
-        contentTextView.text = viewModel.post.content
+        titleTextField.text = viewModel.title
+        contentTextView.text = viewModel.content
     }
 }
 

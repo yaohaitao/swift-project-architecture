@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 // MARK: - 环境
 
@@ -48,7 +49,8 @@ enum URLs {
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:
-            return "http://localhost/SwiftArchitecture"
+            return "http://localhost/api"
+//            return "https://mossgreen.sakura.ne.jp/EditriumAPI"
         case .continuousIntegration:
             return "https://continuousintegration/"
         case .testing:
@@ -60,11 +62,19 @@ enum URLs {
         }
     }()
 
-    static let postURL = URLs.baseURL + "/post"
+    static let postURL = URLs.baseURL + "/post.php"
 }
 
 // MARK: - 颜色
 
 enum Color {
     static let primaryColor = UIColor.black
+}
+
+// MARK: - 错误信息
+
+enum ErrorMessage {
+    static let invalidJSON = "Can not map the json data to this object."
+    static let invalidArray = "Can not transform the json data to array."
+    static let requestFailed = "Can not access the service."
 }

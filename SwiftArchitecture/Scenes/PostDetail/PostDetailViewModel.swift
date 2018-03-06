@@ -12,17 +12,17 @@ class PostDetailViewModel {
 
     private let navigator: PostDetailNavigator
     private weak var delegate: PostDetailViewControllerDelegate?
+
+    let title: String
+    let content: String
     var post: Post
 
     required init(post: Post, navigator: PostDetailNavigator, delegate: PostDetailViewControllerDelegate) {
         self.post = post
+        self.title = post.title
+        self.content = post.content
         self.navigator = navigator
         self.delegate = delegate
     }
-
-//    func updatePost(title: String, content: String) {
-//        post.title = title
-//        post.content = content
-//    }
 
 }

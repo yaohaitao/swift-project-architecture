@@ -7,18 +7,31 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-public struct Post {
-    public var content: String
-    public var title: String
-    public var postId: Int
+public struct Post: Modelable {
 
-    public init(postId: Int,
-                content: String,
-                title: String) {
+    var content: String
+    var title: String
+    var postId: Int
+
+    init(postId: Int,
+         content: String,
+         title: String) {
         self.postId = postId
         self.content = content
         self.title = title
+    }
+
+    init(fromJSON json: JSON) throws {
+        guard let postId = json["postId"].int,
+            let title = json["title"].string,
+            let content = json["content"].string else {
+                throw ErrorType.invalidJSON(ErrorMessage.invalidJSON)
+        }
+        self.postId = postId
+        self.title = title
+        self.content = content
     }
 }
 

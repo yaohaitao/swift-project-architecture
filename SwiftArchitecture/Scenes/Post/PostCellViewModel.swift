@@ -10,12 +10,12 @@ import Foundation
 
 class PostCellViewModel {
     let title: String
-    let subtitle: String
+    let content: String
     let post: Post
 
     init (with post: Post) {
         self.post = post
         self.title = post.title
-        self.subtitle = post.content
+        self.content = post.content
     }
 }

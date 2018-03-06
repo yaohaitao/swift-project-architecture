@@ -7,7 +7,6 @@
 //
 
 #include "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.release(staging).xcconfig"
-
 #include "Common.xcconfig"
 
 CONFIG_FLAG = STAGING

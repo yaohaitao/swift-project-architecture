@@ -6,4 +6,9 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
+import Alamofire
+import PromiseKit
+
+class PostAPI {
+
+}

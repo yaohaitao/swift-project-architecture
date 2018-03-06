@@ -7,19 +7,7 @@
 //
 
 import UIKit
-
-//protocol PostViewModelProtocol:  {
-//
-//    var posts: [Post]? { get }
-//
-//    var postsDidChanged: ((PostViewModelProtocol) -> Void)? { get set }
-//
-//    init(postService: PostService,
-//         postNavigator: PostNavigator)
-//
-//    func loadPosts()
-//
-//}
+import PromiseKit
 
 class PostViewModel: NSObject {
 
@@ -33,9 +21,9 @@ class PostViewModel: NSObject {
             guard
                 let oldValue = oldValue,
                 let newValue = posts
-            else {
-                delegate?.tableViewReloadData()
-                return
+                else {
+                    delegate?.tableViewReloadData()
+                    return
             }
 
             if oldValue.elementsEqual(newValue) {
@@ -59,7 +47,16 @@ class PostViewModel: NSObject {
     // MARK: - 公共方法
 
     func loadPosts() {
-       posts = service.listPosts()
+        service.getPosts()
+            .done { posts in
+                self.posts = posts
+            }.catch { error in
+                if let errorType = error as? ErrorType, case let ErrorType.requestFailed(message) = errorType {
+                    print(message)
+                } else {
+                    print(error)
+                }
+        }
     }
 
     // MARK: - 私有方法
