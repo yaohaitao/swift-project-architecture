@@ -30,6 +30,7 @@
 		799E06402048F32000BD75F0 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E063F2048F32000BD75F0 /* PostCellViewModel.swift */; };
 		79BC99762045369200BD01E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC99752045369200BD01E0 /* Constants.swift */; };
 		79BC998920466F4400BD01E0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BC998820466F4400BD01E0 /* Defaults.swift */; };
+		79D3E0E8204E766E00AFA8EE /* SAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3E0E7204E766E00AFA8EE /* SAError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		79BC997E2045580700BD01E0 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		79BC997F2045583400BD01E0 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		79BC998820466F4400BD01E0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		79D3E0E7204E766E00AFA8EE /* SAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAError.swift; sourceTree = "<group>"; };
 		82EC8CAC58BAF72285777760 /* Pods_SwiftArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED0FC00C92199149080CFC /* Pods-SwiftArchitectureTests.release(staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitectureTests.release(staging).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitectureTests/Pods-SwiftArchitectureTests.release(staging).xcconfig"; sourceTree = "<group>"; };
 		98CA74433D53AD3A5EC7C13F /* Pods-SwiftArchitecture.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftArchitecture.debug(development).xcconfig"; path = "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(development).xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				79BC99752045369200BD01E0 /* Constants.swift */,
+				79D3E0E7204E766E00AFA8EE /* SAError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				799E06322048D22B00BD75F0 /* PostAPI.swift in Sources */,
 				79BC998920466F4400BD01E0 /* Defaults.swift in Sources */,
 				799574B520493872009E518D /* PostNavigator.swift in Sources */,
+				79D3E0E8204E766E00AFA8EE /* SAError.swift in Sources */,
 				799E063C2048E0D100BD75F0 /* Reusable.swift in Sources */,
 				799E062F2048D21700BD75F0 /* Network.swift in Sources */,
 				796006C22045211500E05B5E /* AppDelegate.swift in Sources */,

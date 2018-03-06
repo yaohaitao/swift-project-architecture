@@ -10,43 +10,10 @@ import Alamofire
 import Alamofire_SwiftyJSON
 import PromiseKit
 
-enum ErrorType: Error {
-    case invalidJSON(String)
-    case invalidArray(String)
-    case requestFailed(String)
-    case otherError(String)
-}
-
 class Network<ModelType: Modelable> {
 
     func getItems(url: String) -> Promise<[ModelType]> {
-        return Promise<[ModelType]> { resolve in
-            Alamofire.request(url, method: .get).responseSwiftyJSON { dataResponse in
-                switch dataResponse.result {
-                case .success:
-                    var items: [ModelType] = []
-                    if let jsonArray = dataResponse.value?.array {
-                        for json in jsonArray {
-                            do {
-                                let item = try ModelType(fromJSON: json)
-                                items.append(item)
-                            } catch ErrorType.invalidJSON(let message) {
-//                                print(message)
-                                resolve.reject(ErrorType.invalidJSON(message))
-                            } catch {
-//                                print("An error occurred: \(error)")
-                                resolve.reject(ErrorType.otherError(error.localizedDescription))
-                            }
-                        }
-                        resolve.fulfill(items)
-                    }
-                    resolve.reject(ErrorType.invalidArray(ErrorMessage.invalidArray))
-                case .failure(let error):
-//                    print("An error occurred: \(error)")
-                    resolve.reject(ErrorType.requestFailed(error.localizedDescription))
-                }
-            }
-        }
+        return createPromiseResultWithItems(url: url, method: .get)
     }
 
     func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
@@ -67,24 +34,101 @@ class Network<ModelType: Modelable> {
         return createPromise(url: url, method: .delete, parameters: parameters)
     }
 
-    private func createPromise(url: String, method: HTTPMethod, parameters: Parameters) -> Promise<ModelType> {
+    private func createPromise(url: String,
+                               method: HTTPMethod,
+                               parameters: Parameters) -> Promise<ModelType> {
         return Promise<ModelType> { resolve in
-            Alamofire.request(url, method: method, parameters: parameters).responseSwiftyJSON { dataResponse in
-                switch dataResponse.result {
-                case .success:
-                    if let json = dataResponse.value {
+            Alamofire.request(url, method: method, parameters: parameters)
+                .validate()
+                .responseSwiftyJSON { dataResponse in
+                    switch dataResponse.result {
+                    case .success:
+
+                        let jsonData = dataResponse.value!
+
                         do {
-                            let item = try ModelType(fromJSON: json)
+                            let item = try ModelType(fromJSON: jsonData)
                             resolve.fulfill(item)
-                        } catch ErrorType.invalidJSON(let message) {
-                            resolve.reject(ErrorType.invalidJSON(message))
+                            return
+                        } catch SAError.callApiError(reason:
+                            SAError.CallApiErrorReason.invalidJsonToObject(json: jsonData)) {
+                                resolve.reject(SAError.callApiError(reason: .invalidJsonToObject(json: jsonData)))
+                                return
                         } catch {
-                            resolve.reject(ErrorType.otherError(error.localizedDescription))
+                            resolve.reject(SAError.callApiError(reason:
+                                .otherError(message: error.localizedDescription)))
+                            return
                         }
+
+                    case .failure(let error):
+                        guard case AFError.responseValidationFailed(reason: _) = error else {
+                            guard
+                                let data = dataResponse.data,
+                                let utf8Text = String(data: data, encoding: .utf8) else {
+                                    resolve.reject(SAError.callApiError(reason:
+                                        .otherError(message: error.localizedDescription)))
+                                    return
+                            }
+                            resolve.reject(SAError.callApiError(reason: .invalidDataToJson(data: utf8Text)))
+                            return
+                        }
+                        resolve.reject(SAError.callApiError(reason:
+                            .requestFailed(message: error.localizedDescription)))
+                        return
                     }
-                case .failure(let error):
-                    resolve.reject(ErrorType.requestFailed(error.localizedDescription))
-                }
+            }
+        }
+    }
+
+    private func createPromiseResultWithItems(url: String,
+                                              method: HTTPMethod,
+                                              parameters: Parameters? = nil) -> Promise<[ModelType]> {
+        return Promise<[ModelType]> { resolve in
+            Alamofire.request(url, method: method, parameters: parameters)
+                .validate()
+                .responseSwiftyJSON { dataResponse in
+
+                    switch dataResponse.result {
+                    case .success:
+
+                        guard let jsonData = dataResponse.value, let jsonArray = jsonData.array else {
+                            resolve.reject(SAError.callApiError(reason: .invalidJsonToArray(json: dataResponse.value!)))
+                            return
+                        }
+
+                        var items: [ModelType] = []
+                        for json in jsonArray {
+                            do {
+                                let item = try ModelType(fromJSON: json)
+                                items.append(item)
+                            } catch SAError.callApiError(reason:
+                                SAError.CallApiErrorReason.invalidJsonToObject(json: json)) {
+                                    resolve.reject(SAError.callApiError(reason: .invalidJsonToObject(json: json)))
+                                    return
+                            } catch {
+                                resolve.reject(SAError.callApiError(reason:
+                                    .otherError(message: error.localizedDescription)))
+                                return
+                            }
+                        }
+                        resolve.fulfill(items)
+                        return
+                    case .failure(let error):
+                        guard case AFError.responseValidationFailed(reason: _) = error else {
+                            guard
+                                let data = dataResponse.data,
+                                let utf8Text = String(data: data, encoding: .utf8) else {
+                                    resolve.reject(SAError.callApiError(reason:
+                                        .otherError(message: error.localizedDescription)))
+                                    return
+                            }
+                            resolve.reject(SAError.callApiError(reason: .invalidDataToJson(data: utf8Text)))
+                            return
+                        }
+                        resolve.reject(SAError.callApiError(reason:
+                            .requestFailed(message: error.localizedDescription)))
+                        return
+                    }
             }
         }
     }

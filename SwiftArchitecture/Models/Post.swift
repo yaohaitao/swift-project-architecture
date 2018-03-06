@@ -27,7 +27,7 @@ public struct Post: Modelable {
         guard let postId = json["postId"].int,
             let title = json["title"].string,
             let content = json["content"].string else {
-                throw ErrorType.invalidJSON(ErrorMessage.invalidJSON)
+                throw SAError.callApiError(reason: SAError.CallApiErrorReason.invalidJsonToObject(json: json))
         }
         self.postId = postId
         self.title = title

@@ -11,7 +11,6 @@ import UIKit
 import SwiftyJSON
 
 // MARK: - 环境
-
 private enum Enviroment {
     case development
     case continuousIntegration
@@ -37,20 +36,17 @@ private enum Enviroment {
 }
 
 // MARK: - 配置
-
 enum Config {
     static let mainStoryboard = "Main"
 }
 
 // MARK: - URL
-
 enum URLs {
 
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:
-            return "http://localhost/api"
-//            return "https://mossgreen.sakura.ne.jp/EditriumAPI"
+            return "http://localhost/EditriumAPI"
         case .continuousIntegration:
             return "https://continuousintegration/"
         case .testing:
@@ -66,15 +62,6 @@ enum URLs {
 }
 
 // MARK: - 颜色
-
 enum Color {
     static let primaryColor = UIColor.black
-}
-
-// MARK: - 错误信息
-
-enum ErrorMessage {
-    static let invalidJSON = "Can not map the json data to this object."
-    static let invalidArray = "Can not transform the json data to array."
-    static let requestFailed = "Can not access the service."
 }
