@@ -9,9 +9,9 @@
 #include "Pods/Target Support Files/Pods-SwiftArchitecture/Pods-SwiftArchitecture.debug(development).xcconfig"
 #include "Common.xcconfig"
 
-// 设置 CONFIG_FLAG 属性，作用于对当前环境的判断，还需在 OTHER_SWIFT_FLAGS 中设置 "－D ${CONFIG_FLAG}"
+// Constants.swiftで利用できるフラグの設定
 CONFIG_FLAG = DEVELOPMENT
-// APP 的名字
+// アプリの名前
 APP_DISPLAY_NAME = SA(Dev)
 // Bundle Identifier
 APP_BUNDLE_IDENTIFIER = yaohaitao.dev

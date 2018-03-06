@@ -10,16 +10,9 @@ import Alamofire
 import Alamofire_SwiftyJSON
 import PromiseKit
 
-enum ErrorType: Error {
-    case invalidJSON(String)
-    case invalidArray(String)
-    case requestFailed(String)
-    case otherError(String)
-}
-
 class Network<ModelType: Modelable> {
 
-    func getItems(url: String) -> Promise<[ModelType]> {
+    public func getItems(url: String) -> Promise<[ModelType]> {
         return Promise<[ModelType]> { resolve in
             Alamofire.request(url, method: .get).responseSwiftyJSON { dataResponse in
                 switch dataResponse.result {
@@ -49,20 +42,20 @@ class Network<ModelType: Modelable> {
         }
     }
 
-    func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    public func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         return createPromise(url: url, method: .get, parameters: parameters)
     }
 
-    func postItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    public func postItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         return createPromise(url: url, method: .post, parameters: parameters)
     }
 
-    func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    public func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         // FIXME: Decide the method
         return createPromise(url: url, method: .put, parameters: parameters)
     }
 
-    func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    public func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         // FIXME: Decide the method
         return createPromise(url: url, method: .delete, parameters: parameters)
     }

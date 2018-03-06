@@ -11,27 +11,22 @@ import PromiseKit
 
 class PostService {
 
-//    private let api = NetworkProvider().makePostAPI()
+    /// 通信用
     private let network = Network<Post>()
 
-//    var posts: [Post] = {
-//        var posts: [Post] = []
-//
-//        for i in 1...5 {
-//            posts.append(Post(postId: i, content: "Post No.\(i) said that ...", title: "Post No.\(i)"))
-//        }
-//
-//        return posts
-//    }()
-//
-//    func listPosts() -> [Post] {
-//        return posts
-//    }
 
+    /// 全部のPostを取得
+    ///
+    /// - Returns:
     func getPosts() -> Promise<[Post]> {
         return network.getItems(url: URLs.postURL)
     }
 
+
+    /// PostIdで、Postオブジェクトを取得
+    ///
+    /// - Parameter postId: ポストのID
+    /// - Returns: 
     func getPostByPostId(postId: Int) -> Promise<Post> {
         let params = ["postId": postId]
         return network.getItem(url: URLs.postURL, parameters: params)

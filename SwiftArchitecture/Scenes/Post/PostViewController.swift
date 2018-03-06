@@ -10,17 +10,24 @@ import UIKit
 
 protocol PostViewControllerDelegate: class {
 
+    /// テーブルビューは全てのデータを再読み込む
     func tableViewReloadData()
 
+    /// デーブルビューから、指定されたセルを削除
+    ///
+    /// - Parameter indexPaths: 指定されたセルのインデックス
     func deleteRows(indexPaths: [IndexPath])
 }
 
 class PostViewController: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
 
+    // MARK: - 変数の定義
     var viewModel: PostViewModel!
 
+    // MARK: - Viewのライフサイクル
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +40,7 @@ class PostViewController: UIViewController {
         viewModel.loadPosts()
     }
 
+    // MARK: - プライペート方法の定義
     private func configureTableView() {
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -42,6 +50,7 @@ class PostViewController: UIViewController {
     }
 }
 
+// MARK: - Delegateの実装
 extension PostViewController: PostViewControllerDelegate {
 
     func tableViewReloadData() {

@@ -9,6 +9,7 @@
 import Alamofire
 import PromiseKit
 
+// 使っていない
 class PostAPI {
 
 }

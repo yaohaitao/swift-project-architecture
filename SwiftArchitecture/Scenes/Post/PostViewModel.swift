@@ -11,8 +11,7 @@ import PromiseKit
 
 class PostViewModel: NSObject {
 
-    // MARK: - 变量声明
-
+    // MARK: - 変数の定義
     private let service: PostService
     private let navigator: PostNavigator
     private weak var delegate: PostViewControllerDelegate?
@@ -36,15 +35,21 @@ class PostViewModel: NSObject {
         }
     }
 
-    // MARK: - 初始化
+    // MARK: - 初期化
 
+    /// 指定された初期化方法
+    ///
+    /// - Parameters:
+    ///   - service: Modelを操作するサービス
+    ///   - navigator: 画面遷移用の案内者
+    ///   - delegate: ビューを操作するためのDelegate
     required init(service: PostService, navigator: PostNavigator, delegate: PostViewControllerDelegate) {
         self.service = service
         self.navigator = navigator
         self.delegate = delegate
     }
 
-    // MARK: - 公共方法
+    // MARK: - 方法
 
     func loadPosts() {
         service.getPosts()
@@ -59,7 +64,7 @@ class PostViewModel: NSObject {
         }
     }
 
-    // MARK: - 私有方法
+    // MARK: - プライペート方法
 
     private func getCurrentPost(of indexPath: IndexPath) -> Post {
         guard let post = posts?[indexPath.row] else {

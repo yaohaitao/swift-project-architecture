@@ -11,10 +11,12 @@ import SwiftyJSON
 
 public struct Post: Modelable {
 
+    // MARK: - フィールドの定義
     var content: String
     var title: String
     var postId: Int
 
+    // MARK: - 初期化方法の定義
     init(postId: Int,
          content: String,
          title: String) {
@@ -23,10 +25,12 @@ public struct Post: Modelable {
         self.title = title
     }
 
+// MARK: - JSONデータをこのオブジェクトに変える
     init(fromJSON json: JSON) throws {
         guard let postId = json["postId"].int,
             let title = json["title"].string,
             let content = json["content"].string else {
+                // 変えられないと、エラー
                 throw ErrorType.invalidJSON(ErrorMessage.invalidJSON)
         }
         self.postId = postId
