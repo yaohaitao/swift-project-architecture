@@ -50,7 +50,8 @@ class PostViewModel: NSObject {
             .done { posts in
                 self.posts = posts
             }.catch { error in
-                if case let SAError.callApiError(reason: .requestFailed(message: message)) = error {
+                if case let SAError.callApiError(reason: .internetConnectFailed(message: message)) = error {
+                    // 处理网络连接错误
                     print(message)
                 } else {
                     print(error.localizedDescription)

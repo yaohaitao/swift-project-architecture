@@ -18,6 +18,7 @@ public enum SAError: Error {
         case invalidJsonToObject(json: JSON)
         case invalidJsonToArray(json: JSON)
         case requestFailed(message: String)
+        case internetConnectFailed(message: String)
         case otherError(message: String)
     }
 }
@@ -26,13 +27,27 @@ extension SAError.CallApiErrorReason {
     var localizedDescription: String {
         switch self {
         case .invalidDataToJson(let data):
-            return "JSON could not be serialized with data: \(data)"
+            return "JSON could not be serialized with data: \n" +
+                "************* \n" +
+                "\(data) \n" +
+                "************* \n" +
+                "Please confirm the format."
         case .invalidJsonToObject(let json):
-            return "Object could not be initialized with JSON data: \(json)"
+            return "Object could not be initialized with JSON data: \n" +
+                "************* \n" +
+                "\(json) \n" +
+                "************* \n" +
+                "Please confirm the format."
         case .invalidJsonToArray(let json):
-            return "Array could not be transformed with JSON data: \(json)"
+            return "Array could not be transformed with JSON data: \n" +
+                "************* \n" +
+                "\(json) \n" +
+                "************* \n" +
+                "Please confirm the format."
         case .requestFailed(let message):
-            return "Request failed: \(message)"
+            return "Request failed: \n\(message)"
+        case .internetConnectFailed(let message):
+            return message
         case .otherError(let message):
             return message
         }
