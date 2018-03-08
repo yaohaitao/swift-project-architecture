@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-// MARK: - 环境
+// MARK: - 环境设置
 private enum Enviroment {
     case development
     case continuousIntegration
@@ -35,12 +35,12 @@ private enum Enviroment {
     }()
 }
 
-// MARK: - 配置
+// MARK: - 常用字符串
 enum Config {
     static let mainStoryboard = "Main"
 }
 
-// MARK: - URL
+// MARK: - URL定义
 enum URLs {
 
     static let baseURL: String = {
@@ -61,7 +61,7 @@ enum URLs {
     static let postURL = URLs.baseURL + "/post.php"
 }
 
-// MARK: - 颜色
+// MARK: - 颜色定义
 enum Color {
     static let primaryColor = UIColor.black
 }

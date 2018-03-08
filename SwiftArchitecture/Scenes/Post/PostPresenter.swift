@@ -1,5 +1,5 @@
 //
-//  PostViewModel.swift
+//  PostPresenter.swift
 //  SwiftArchitecture
 //
 //  Created by 姚海涛 on 2018/3/2.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class PostViewModel: NSObject {
+class PostPresenter: NSObject {
 
-    // MARK: - 变量声明
-
+    // MARK: - 定义变量
     private let service: PostService
     private let navigator: PostNavigator
     private weak var delegate: PostViewControllerDelegate?
@@ -43,7 +42,7 @@ class PostViewModel: NSObject {
         self.delegate = delegate
     }
 
-    // MARK: - 公共方法
+    // MARK: - 方法
 
     func loadPosts() {
         service.getPosts()
@@ -51,7 +50,7 @@ class PostViewModel: NSObject {
                 self.posts = posts
             }.catch { error in
                 if case let SAError.callApiError(reason: .internetConnectFailed(message: message)) = error {
-                    // 处理网络连接错误
+                    // 网络连接错误
                     print(message)
                 } else {
                     print(error.localizedDescription)
@@ -72,7 +71,7 @@ class PostViewModel: NSObject {
 
 // MARK: - Ext: Table View Data Source
 
-extension PostViewModel: UITableViewDataSource {
+extension PostPresenter: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = posts?.count else { return 0 }
@@ -82,7 +81,7 @@ extension PostViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: PostCell.self, at: indexPath)
         let post = getCurrentPost(of: indexPath)
-        let viewModel = PostCellViewModel(with: post)
+        let viewModel = PostCellPresenter(with: post)
         cell.bind(viewModel)
         return cell
     }
@@ -91,7 +90,7 @@ extension PostViewModel: UITableViewDataSource {
 
 // MARK: - Ext: Table View Delegate
 
-extension PostViewModel: UITableViewDelegate {
+extension PostPresenter: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = getCurrentPost(of: indexPath)

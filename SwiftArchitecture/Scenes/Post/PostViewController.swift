@@ -10,17 +10,24 @@ import UIKit
 
 protocol PostViewControllerDelegate: class {
 
+    /// 刷新 Table View
     func tableViewReloadData()
 
+    /// 删除指定的行
+    ///
+    /// - Parameter indexPaths: 行的索引
     func deleteRows(indexPaths: [IndexPath])
 }
 
 class PostViewController: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel: PostViewModel!
+    // MARK: - 变量定义
+    var viewModel: PostPresenter!
 
+    // MARK: - View 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,8 +40,12 @@ class PostViewController: UIViewController {
         viewModel.loadPosts()
     }
 
+    // MARK: - 私有方法
     private func configureTableView() {
-        tableView.estimatedRowHeight = 90
+
+        tableView.register(ofType: PostCell.self)
+
+        tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.dataSource = self.viewModel
@@ -42,6 +53,7 @@ class PostViewController: UIViewController {
     }
 }
 
+// MARK: - 实现Delegate
 extension PostViewController: PostViewControllerDelegate {
 
     func tableViewReloadData() {

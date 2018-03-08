@@ -9,16 +9,36 @@
 import Foundation
 import PromiseKit
 
-class PostService {
+protocol PostService {
 
-    private let network = Network<Post>()
+    init(api: PostApi)
 
-    func getPosts() -> Promise<[Post]> {
-        return network.getItems(url: URLs.postURL)
+    /// 获取全部帖子
+    ///
+    /// - Returns:
+    func getPosts() -> Promise<[Post]>
+
+    /// 通过 PostId 获取帖子
+    ///
+    /// - Parameter postId: 帖子ID
+    /// - Returns:
+    func getPost(by postId: Int)  -> Promise<Post>
+}
+
+class DefaultPostService: PostService {
+
+    /// 通信用
+    private let api: PostApi
+
+    required init(api: PostApi) {
+        self.api = api
     }
 
-    func getPostByPostId(postId: Int) -> Promise<Post> {
-        let params = ["postId": postId]
-        return network.getItem(url: URLs.postURL, parameters: params)
+    func getPosts() -> Promise<[Post]> {
+        return api.fetchPosts()
+    }
+
+    func getPost(by postId: Int) -> Promise<Post> {
+        return api.fetchPostByPostId(postId: postId)
     }
 }
