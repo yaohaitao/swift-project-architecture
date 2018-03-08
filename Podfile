@@ -10,10 +10,10 @@ target 'SwiftArchitecture' do
   # Pods for SwiftArchitecture
   pod 'SwiftLint'
 
-  pod 'Alamofire', '~> 4.6'
-  pod 'SwiftyJSON', '~> 4.0'
-  pod 'Alamofire-SwiftyJSON', '~> 3.0'
-  pod "PromiseKit", '~> 6.0'
+  pod 'Alamofire', '4.6.0'
+  pod 'SwiftyJSON', '4.0.0'
+  pod 'Alamofire-SwiftyJSON', '3.0.0'
+  pod "PromiseKit", '6.2.0'
     
   target 'SwiftArchitectureTests' do
     inherit! :search_paths

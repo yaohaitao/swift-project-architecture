@@ -14,14 +14,12 @@ class PostService {
     /// 通信用
     private let network = Network<Post>()
 
-
     /// 全部のPostを取得
     ///
     /// - Returns:
     func getPosts() -> Promise<[Post]> {
         return network.getItems(url: URLs.postURL)
     }
-
 
     /// PostIdで、Postオブジェクトを取得
     ///

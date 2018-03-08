@@ -46,8 +46,7 @@ enum URLs {
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:
-            return "http://localhost/api"
-//            return "https://mossgreen.sakura.ne.jp/EditriumAPI"
+            return "http://localhost/EditriumAPI"
         case .continuousIntegration:
             return "https://continuousintegration/"
         case .testing:
@@ -65,19 +64,4 @@ enum URLs {
 // MARK: - カラーの定義
 enum Color {
     static let primaryColor = UIColor.black
-}
-
-// MARK: - エラーメッセージの定義
-enum ErrorType: Error {
-    case invalidJSON(String)
-    case invalidArray(String)
-    case requestFailed(String)
-    case otherError(String)
-}
-
-// MARK: - エラーメッセージの定義
-enum ErrorMessage {
-    static let invalidJSON = "Can not map the json data to this object."
-    static let invalidArray = "Can not transform the json data to array."
-    static let requestFailed = "Can not access the service."
 }

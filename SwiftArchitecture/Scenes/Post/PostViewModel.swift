@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PromiseKit
 
 class PostViewModel: NSObject {
 
@@ -56,10 +55,11 @@ class PostViewModel: NSObject {
             .done { posts in
                 self.posts = posts
             }.catch { error in
-                if let errorType = error as? ErrorType, case let ErrorType.requestFailed(message) = errorType {
+                if case let SAError.callApiError(reason: .internetConnectFailed(message: message)) = error {
+                    // 接続エラーの処理
                     print(message)
                 } else {
-                    print(error)
+                    print(error.localizedDescription)
                 }
         }
     }

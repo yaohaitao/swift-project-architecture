@@ -12,72 +12,136 @@ import PromiseKit
 
 class Network<ModelType: Modelable> {
 
-    public func getItems(url: String) -> Promise<[ModelType]> {
-        return Promise<[ModelType]> { resolve in
-            Alamofire.request(url, method: .get).responseSwiftyJSON { dataResponse in
-                switch dataResponse.result {
-                case .success:
-                    var items: [ModelType] = []
-                    if let jsonArray = dataResponse.value?.array {
-                        for json in jsonArray {
-                            do {
-                                let item = try ModelType(fromJSON: json)
-                                items.append(item)
-                            } catch ErrorType.invalidJSON(let message) {
-//                                print(message)
-                                resolve.reject(ErrorType.invalidJSON(message))
-                            } catch {
-//                                print("An error occurred: \(error)")
-                                resolve.reject(ErrorType.otherError(error.localizedDescription))
-                            }
-                        }
-                        resolve.fulfill(items)
-                    }
-                    resolve.reject(ErrorType.invalidArray(ErrorMessage.invalidArray))
-                case .failure(let error):
-//                    print("An error occurred: \(error)")
-                    resolve.reject(ErrorType.requestFailed(error.localizedDescription))
-                }
-            }
-        }
+    func getItems(url: String) -> Promise<[ModelType]> {
+        return createPromiseResultWithItems(url: url, method: .get)
     }
 
-    public func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         return createPromise(url: url, method: .get, parameters: parameters)
     }
 
-    public func postItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    func postItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         return createPromise(url: url, method: .post, parameters: parameters)
     }
 
-    public func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         // FIXME: Decide the method
         return createPromise(url: url, method: .put, parameters: parameters)
     }
 
-    public func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
+    func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
         // FIXME: Decide the method
         return createPromise(url: url, method: .delete, parameters: parameters)
     }
 
-    private func createPromise(url: String, method: HTTPMethod, parameters: Parameters) -> Promise<ModelType> {
+    private func createPromise(url: String,
+                               method: HTTPMethod,
+                               parameters: Parameters) -> Promise<ModelType> {
         return Promise<ModelType> { resolve in
-            Alamofire.request(url, method: method, parameters: parameters).responseSwiftyJSON { dataResponse in
-                switch dataResponse.result {
-                case .success:
-                    if let json = dataResponse.value {
+            Alamofire.request(url, method: method, parameters: parameters)
+                .validate()
+                .responseSwiftyJSON { dataResponse in
+
+                    switch dataResponse.result {
+                    case .success:
+                        // 変えられるJSONデータを取得、失敗だったら、.failureを実行
+                        let jsonData = dataResponse.value!
+                        // JSONデータをモデルオブジェクトに変える
                         do {
-                            let item = try ModelType(fromJSON: json)
+                            let item = try ModelType(fromJSON: jsonData)
                             resolve.fulfill(item)
-                        } catch ErrorType.invalidJSON(let message) {
-                            resolve.reject(ErrorType.invalidJSON(message))
+                            return
+                        } catch SAError.callApiError(reason:
+                            // 変換失敗
+                            SAError.CallApiErrorReason.invalidJsonToObject(json: jsonData)) {
+                                resolve.reject(SAError.callApiError(reason: .invalidJsonToObject(json: jsonData)))
+                                return
                         } catch {
-                            resolve.reject(ErrorType.otherError(error.localizedDescription))
+                            // 他のエラー
+                            resolve.reject(SAError.callApiError(reason:
+                                .otherError(message: error.localizedDescription)))
+                            return
+                        }
+                    case .failure(let error):
+                        if case AFError.responseValidationFailed(reason: _) = error {
+                            // サーバー返信に関するエラー
+                            resolve.reject(SAError.callApiError(reason:
+                                .requestFailed(message: error.localizedDescription)))
+                            return
+                        } else if case AFError.responseSerializationFailed(reason: _) = error {
+                            // サーバーからデータをJSONに変換できない
+                            let data = dataResponse.data
+                            let utf8Text = String(data: data!, encoding: .utf8)
+                            resolve.reject(SAError.callApiError(reason:
+                                .invalidDataToJson(data: utf8Text!)))
+                            return
+                        } else {
+                            // 接続エラー
+                            resolve.reject(SAError.callApiError(reason:
+                                .internetConnectFailed(message: error.localizedDescription)))
+                            return
                         }
                     }
-                case .failure(let error):
-                    resolve.reject(ErrorType.requestFailed(error.localizedDescription))
-                }
+            }
+        }
+    }
+
+    private func createPromiseResultWithItems(url: String,
+                                              method: HTTPMethod,
+                                              parameters: Parameters? = nil) -> Promise<[ModelType]> {
+        return Promise<[ModelType]> { resolve in
+            Alamofire.request(url, method: method, parameters: parameters)
+                .validate()
+                .responseSwiftyJSON { dataResponse in
+
+                    switch dataResponse.result {
+                    case .success:
+
+                        let jsonData = dataResponse.value!
+
+                        guard let jsonArray = jsonData.array else {
+                            resolve.reject(SAError.callApiError(reason: .invalidJsonToArray(json: dataResponse.value!)))
+                            return
+                        }
+
+                        var items: [ModelType] = []
+                        for json in jsonArray {
+                            do {
+                                let item = try ModelType(fromJSON: json)
+                                items.append(item)
+                            } catch SAError.callApiError(reason:
+                                SAError.CallApiErrorReason.invalidJsonToObject(json: json)) {
+                                    resolve.reject(SAError.callApiError(reason: .invalidJsonToObject(json: json)))
+                                    return
+                            } catch {
+                                resolve.reject(SAError.callApiError(reason:
+                                    .otherError(message: error.localizedDescription)))
+                                return
+                            }
+                        }
+                        resolve.fulfill(items)
+                        return
+
+                    case .failure(let error):
+                        if case AFError.responseValidationFailed(reason: _) = error {
+                            // サーバー返信に関するエラー
+                            resolve.reject(SAError.callApiError(reason:
+                                .requestFailed(message: error.localizedDescription)))
+                            return
+                        } else if case AFError.responseSerializationFailed(reason: _) = error {
+                            // サーバーからデータをJSONに変換できない
+                            let data = dataResponse.data
+                            let utf8Text = String(data: data!, encoding: .utf8)
+                            resolve.reject(SAError.callApiError(reason:
+                                .invalidDataToJson(data: utf8Text!)))
+                            return
+                        } else {
+                            // 接続エラー
+                            resolve.reject(SAError.callApiError(reason:
+                                .internetConnectFailed(message: error.localizedDescription)))
+                            return
+                        }
+                    }
             }
         }
     }

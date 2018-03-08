@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // タブターをウインドーのルートビューに設定する
         window.rootViewController = tabBarController
-
         self.window = window
         return true
     }
