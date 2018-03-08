@@ -16,6 +16,9 @@
 		796006C92045211500E05B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796006C82045211500E05B5E /* Assets.xcassets */; };
 		796006CC2045211500E05B5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796006CA2045211500E05B5E /* LaunchScreen.storyboard */; };
 		796006D72045211600E05B5E /* SwiftArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796006D62045211600E05B5E /* SwiftArchitectureTests.swift */; };
+		7975300C2050CBAB00F7BC23 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7975300B2050CBAB00F7BC23 /* PostViewController.xib */; };
+		7975300E2050CC8500F7BC23 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7975300D2050CC8500F7BC23 /* PostCell.xib */; };
+		797530102050D1CA00F7BC23 /* PostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7975300F2050D1CA00F7BC23 /* PostDetailViewController.xib */; };
 		799574B520493872009E518D /* PostNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574B420493872009E518D /* PostNavigator.swift */; };
 		799574B720493C90009E518D /* PostDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574B620493C90009E518D /* PostDetailNavigator.swift */; };
 		799574BD204CEFE3009E518D /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799574BC204CEFE3009E518D /* Modelable.swift */; };
@@ -64,6 +67,9 @@
 		796006D82045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796006E12045211600E05B5E /* SwiftArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureUITests.swift; sourceTree = "<group>"; };
 		796006E32045211600E05B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7975300B2050CBAB00F7BC23 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+		7975300D2050CC8500F7BC23 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		7975300F2050D1CA00F7BC23 /* PostDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailViewController.xib; sourceTree = "<group>"; };
 		799574B420493872009E518D /* PostNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNavigator.swift; sourceTree = "<group>"; };
 		799574B620493C90009E518D /* PostDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailNavigator.swift; sourceTree = "<group>"; };
 		799574BC204CEFE3009E518D /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
@@ -134,9 +140,10 @@
 		79474A24204921A500CCE27D /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
+				799574B620493C90009E518D /* PostDetailNavigator.swift */,
+				7975300F2050D1CA00F7BC23 /* PostDetailViewController.xib */,
 				79474A2520492E0D00CCE27D /* PostDetailViewController.swift */,
 				79474A2720492E2100CCE27D /* PostDetailViewModel.swift */,
-				799574B620493C90009E518D /* PostDetailNavigator.swift */,
 			);
 			path = PostDetail;
 			sourceTree = "<group>";
@@ -232,11 +239,13 @@
 		799E06362048DF7800BD75F0 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				799E06372048E01100BD75F0 /* PostCell.swift */,
-				799E063F2048F32000BD75F0 /* PostCellViewModel.swift */,
+				799574B420493872009E518D /* PostNavigator.swift */,
+				7975300B2050CBAB00F7BC23 /* PostViewController.xib */,
 				799E06392048E02500BD75F0 /* PostViewController.swift */,
 				799E063D2048E16A00BD75F0 /* PostViewModel.swift */,
-				799574B420493872009E518D /* PostNavigator.swift */,
+				7975300D2050CC8500F7BC23 /* PostCell.xib */,
+				799E06372048E01100BD75F0 /* PostCell.swift */,
+				799E063F2048F32000BD75F0 /* PostCellViewModel.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -394,7 +403,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7975300C2050CBAB00F7BC23 /* PostViewController.xib in Resources */,
+				797530102050D1CA00F7BC23 /* PostDetailViewController.xib in Resources */,
 				796006CC2045211500E05B5E /* LaunchScreen.storyboard in Resources */,
+				7975300E2050CC8500F7BC23 /* PostCell.xib in Resources */,
 				796006C92045211500E05B5E /* Assets.xcassets in Resources */,
 				796006C72045211500E05B5E /* Main.storyboard in Resources */,
 			);

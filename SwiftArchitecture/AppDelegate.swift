@@ -18,16 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Windowの作成
         let window = UIWindow(frame: UIScreen.main.bounds)
 
-        // Storyboardの名前で、Storyboardを取得
-        let storyBoard = UIStoryboard(name: Config.mainStoryboard, bundle: nil)
-
         // NavigationControllerの作成
         let postNavigationController = UINavigationController()
         // NavigationControllerのタブバーの設定
         postNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
 
         // Postの案内者を作成
-        let postNavigator = PostNavigator(service: PostService(), navigationController: postNavigationController, storyBoard: storyBoard)
+        let postService = PostService()
+        let postNavigator = PostNavigator(service: postService, navigationController: postNavigationController)
         // PostView画面を誘導
         postNavigator.toPostView()
 

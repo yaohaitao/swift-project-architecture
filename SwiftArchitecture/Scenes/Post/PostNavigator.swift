@@ -10,20 +10,17 @@ import UIKit
 
 class PostNavigator {
 
-    private let storyBoard: UIStoryboard
     private let navigationController: UINavigationController
     private let service: PostService
 
     init(service: PostService,
-         navigationController: UINavigationController,
-         storyBoard: UIStoryboard) {
+         navigationController: UINavigationController) {
         self.service = service
         self.navigationController = navigationController
-        self.storyBoard = storyBoard
     }
 
     func toPostView() {
-        let vc = storyBoard.instantiateViewController(ofType: PostViewController.self)
+        let vc = PostViewController()
         vc.viewModel = PostViewModel(service: service, navigator: self, delegate: vc)
         vc.navigationItem.title = "Post"
 
@@ -31,7 +28,7 @@ class PostNavigator {
     }
 
     func toPostDetailView(_ post: Post) {
-        let vc = storyBoard.instantiateViewController(ofType: PostDetailViewController.self)
+        let vc = PostDetailViewController()
         let postDetailNavigator = PostDetailNavigator(navigationController: navigationController)
         vc.viewModel = PostDetailViewModel(post: post, navigator: postDetailNavigator, delegate: vc)
         vc.navigationItem.title = post.title

@@ -31,6 +31,11 @@ extension UITableView {
         }
         return cell
     }
+
+    func register<T: Reusable>(ofType cellType: T.Type = T.self) {
+        let nib = UINib.init(nibName: T.reuseID, bundle: nil)
+        self.register(nib, forCellReuseIdentifier: T.reuseID)
+    }
 }
 
 extension UIStoryboard {

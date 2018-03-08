@@ -42,7 +42,10 @@ class PostViewController: UIViewController {
 
     // MARK: - プライペート方法の定義
     private func configureTableView() {
-        tableView.estimatedRowHeight = 90
+
+        tableView.register(ofType: PostCell.self)
+
+        tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.dataSource = self.viewModel
