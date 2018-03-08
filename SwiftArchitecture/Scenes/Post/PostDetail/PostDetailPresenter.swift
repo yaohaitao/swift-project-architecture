@@ -1,5 +1,5 @@
 //
-//  PostDetailViewModel.swift
+//  PostDetailPresenter.swift
 //  SwiftArchitecture
 //
 //  Created by 姚海涛 on 2018/3/2.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PostDetailViewModel {
+class PostDetailPresenter {
 
     private let navigator: PostDetailNavigator
     private weak var delegate: PostDetailViewControllerDelegate?

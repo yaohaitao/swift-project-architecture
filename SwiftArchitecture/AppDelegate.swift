@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         postNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
 
         // Postの案内者を作成
-        let postService = PostService()
+        let postService = ServiceProvider().makePostService()
         let postNavigator = PostNavigator(service: postService, navigationController: postNavigationController)
         // PostView画面を誘導
         postNavigator.toPostView()

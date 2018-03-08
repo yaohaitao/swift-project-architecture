@@ -1,5 +1,5 @@
 //
-//  PostViewModel.swift
+//  PostPresenter.swift
 //  SwiftArchitecture
 //
 //  Created by 姚海涛 on 2018/3/2.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostViewModel: NSObject {
+class PostPresenter: NSObject {
 
     // MARK: - 変数の定義
     private let service: PostService
@@ -77,7 +77,7 @@ class PostViewModel: NSObject {
 
 // MARK: - Ext: Table View Data Source
 
-extension PostViewModel: UITableViewDataSource {
+extension PostPresenter: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = posts?.count else { return 0 }
@@ -87,7 +87,7 @@ extension PostViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: PostCell.self, at: indexPath)
         let post = getCurrentPost(of: indexPath)
-        let viewModel = PostCellViewModel(with: post)
+        let viewModel = PostCellPresenter(with: post)
         cell.bind(viewModel)
         return cell
     }
@@ -96,7 +96,7 @@ extension PostViewModel: UITableViewDataSource {
 
 // MARK: - Ext: Table View Delegate
 
-extension PostViewModel: UITableViewDelegate {
+extension PostPresenter: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = getCurrentPost(of: indexPath)

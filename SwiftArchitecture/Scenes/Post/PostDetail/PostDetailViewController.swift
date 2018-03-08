@@ -17,7 +17,7 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
 
-    var viewModel: PostDetailViewModel!
+    var viewModel: PostDetailPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()

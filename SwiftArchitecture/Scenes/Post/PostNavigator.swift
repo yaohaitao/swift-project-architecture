@@ -1,5 +1,5 @@
 //
-//  PostsNavigator.swift
+//  PostNavigator.swift
 //  SwiftArchitecture
 //
 //  Created by 姚海涛 on 2018/3/2.
@@ -21,7 +21,7 @@ class PostNavigator {
 
     func toPostView() {
         let vc = PostViewController()
-        vc.viewModel = PostViewModel(service: service, navigator: self, delegate: vc)
+        vc.viewModel = PostPresenter(service: service, navigator: self, delegate: vc)
         vc.navigationItem.title = "Post"
 
         navigationController.pushViewController(vc, animated: true)
@@ -30,7 +30,7 @@ class PostNavigator {
     func toPostDetailView(_ post: Post) {
         let vc = PostDetailViewController()
         let postDetailNavigator = PostDetailNavigator(navigationController: navigationController)
-        vc.viewModel = PostDetailViewModel(post: post, navigator: postDetailNavigator, delegate: vc)
+        vc.viewModel = PostDetailPresenter(post: post, navigator: postDetailNavigator, delegate: vc)
         vc.navigationItem.title = post.title
 
         navigationController.pushViewController(vc, animated: true)

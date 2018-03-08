@@ -13,7 +13,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    func bind(_ viewModel: PostCellViewModel) {
+    func bind(_ viewModel: PostCellPresenter) {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.content
     }

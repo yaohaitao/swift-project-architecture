@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PostCellViewModel {
+class PostCellPresenter {
     let title: String
     let content: String
     let post: Post

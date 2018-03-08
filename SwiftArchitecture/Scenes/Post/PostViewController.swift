@@ -25,7 +25,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - 変数の定義
-    var viewModel: PostViewModel!
+    var viewModel: PostPresenter!
 
     // MARK: - Viewのライフサイクル
     override func viewDidLoad() {

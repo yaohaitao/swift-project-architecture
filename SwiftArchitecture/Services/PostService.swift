@@ -9,24 +9,36 @@
 import Foundation
 import PromiseKit
 
-class PostService {
+protocol PostService {
 
-    /// 通信用
-    private let network = Network<Post>()
+    init(api: PostApi)
 
     /// 全部のPostを取得
     ///
     /// - Returns:
-    func getPosts() -> Promise<[Post]> {
-        return network.getItems(url: URLs.postURL)
-    }
+    func getPosts() -> Promise<[Post]>
 
     /// PostIdで、Postオブジェクトを取得
     ///
     /// - Parameter postId: ポストのID
-    /// - Returns: 
-    func getPostByPostId(postId: Int) -> Promise<Post> {
-        let params = ["postId": postId]
-        return network.getItem(url: URLs.postURL, parameters: params)
+    /// - Returns:
+    func getPost(by postId: Int)  -> Promise<Post>
+}
+
+class DefaultPostService: PostService {
+
+    /// 通信用
+    private let api: PostApi
+
+    required init(api: PostApi) {
+        self.api = api
+    }
+
+    func getPosts() -> Promise<[Post]> {
+        return api.fetchPosts()
+    }
+
+    func getPost(by postId: Int) -> Promise<Post> {
+        return api.fetchPostByPostId(postId: postId)
     }
 }
