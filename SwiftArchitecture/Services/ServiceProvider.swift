@@ -17,6 +17,6 @@ final class ServiceProvider {
     }
 
     public func makePostService() -> PostService {
-        return DefaultPostService(api: apiProvider.makePostApi())
+        return RemotePostService(api: apiProvider.makePostApi())
     }
 }

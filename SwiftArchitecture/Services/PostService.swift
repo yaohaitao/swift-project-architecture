@@ -11,8 +11,6 @@ import PromiseKit
 
 protocol PostService {
 
-    init(api: PostApi)
-
     /// 全部のPostを取得
     ///
     /// - Returns:
@@ -25,7 +23,7 @@ protocol PostService {
     func getPost(by postId: Int)  -> Promise<Post>
 }
 
-class DefaultPostService: PostService {
+class RemotePostService: PostService {
 
     /// 通信用
     private let api: PostApi
