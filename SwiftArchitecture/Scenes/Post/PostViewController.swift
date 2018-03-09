@@ -52,6 +52,7 @@ class PostViewController: UIViewController {
 
 // MARK: - 实现Delegate
 extension PostViewController: PostViewControllerDelegate {
+    
     func tableViewReloadData() {
         tableView.reloadData()
     }

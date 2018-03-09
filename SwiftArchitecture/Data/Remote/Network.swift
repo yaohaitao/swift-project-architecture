@@ -11,6 +11,7 @@ import Alamofire_SwiftyJSON
 import PromiseKit
 
 class Network<ModelType: Modelable> {
+
     func getItems(url: String) -> Promise<[ModelType]> {
         return createPromiseResultWithItems(url: url, method: .get)
     }
@@ -34,7 +35,9 @@ class Network<ModelType: Modelable> {
     private func createPromise(url: String,
                                method: HTTPMethod,
                                parameters: Parameters) -> Promise<ModelType> {
+
         return Promise<ModelType> { resolve in
+
             Alamofire.request(url, method: method, parameters: parameters)
                 .validate()
                 .responseSwiftyJSON { dataResponse in
@@ -59,6 +62,7 @@ class Network<ModelType: Modelable> {
                                 .otherError(message: error.localizedDescription)))
                             return
                         }
+
                     case .failure(let error):
                         if case AFError.responseValidationFailed(reason: _) = error {
                             // 服务器错误
@@ -87,11 +91,13 @@ class Network<ModelType: Modelable> {
                                               method: HTTPMethod,
                                               parameters: Parameters? = nil) -> Promise<[ModelType]> {
         return Promise<[ModelType]> { resolve in
+
             Alamofire.request(url, method: method, parameters: parameters)
                 .validate()
                 .responseSwiftyJSON { dataResponse in
 
                     switch dataResponse.result {
+
                     case .success:
 
                         let jsonData = dataResponse.value!

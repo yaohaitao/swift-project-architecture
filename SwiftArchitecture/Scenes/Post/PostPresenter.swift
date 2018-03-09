@@ -67,6 +67,7 @@ class PostPresenter: NSObject {
 
 // MARK: - Ext: Table View Data Source
 extension PostPresenter: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = posts?.count else { return 0 }
         return count
@@ -83,6 +84,7 @@ extension PostPresenter: UITableViewDataSource {
 
 // MARK: - Ext: Table View Delegate
 extension PostPresenter: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = getCurrentPost(of: indexPath)
         self.navigator.toPostDetailView(post)

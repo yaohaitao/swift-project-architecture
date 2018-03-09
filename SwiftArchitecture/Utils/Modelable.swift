@@ -9,5 +9,6 @@
 import SwiftyJSON
 
 protocol Modelable {
+    
     init(fromJSON json: JSON) throws
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class PostNavigator {
+
     private let navigationController: UINavigationController
     private let service: PostService
 
@@ -26,9 +27,10 @@ class PostNavigator {
         navigationController.pushViewController(vc, animated: true)
     }
 
-    func toPostDetailView(_ post: Post) {
-        let vc = PostDetailViewController()
+    func toPostDetailView(_ post: Post)
         let postDetailNavigator = PostDetailNavigator(navigationController: navigationController)
+
+        let vc = PostDetailViewController()
         vc.viewModel = PostDetailPresenter(post: post, navigator: postDetailNavigator, delegate: vc)
         vc.navigationItem.title = post.title
 

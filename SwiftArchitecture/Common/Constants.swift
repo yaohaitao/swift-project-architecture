@@ -10,6 +10,7 @@ import UIKit
 
 // MARK: - 环境设置
 private enum Enviroment {
+
     case development
     case continuousIntegration
     case testing
@@ -40,6 +41,7 @@ enum Config {
 
 // MARK: - URL定义
 enum URLs {
+
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:

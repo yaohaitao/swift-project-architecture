@@ -7,6 +7,7 @@
 //
 
 final class ApiProvider {
+
     public func makePostApi() -> PostApi {
         let network = Network<Post>()
         return PostApi(network: network)

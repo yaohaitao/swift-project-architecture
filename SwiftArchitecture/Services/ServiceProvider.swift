@@ -7,6 +7,7 @@
 //
 
 final class ServiceProvider {
+    
     private let apiProvider: ApiProvider
 
     init() {

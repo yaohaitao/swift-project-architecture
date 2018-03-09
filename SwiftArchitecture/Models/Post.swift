@@ -9,6 +9,7 @@
 import SwiftyJSON
 
 public struct Post {
+
     var content: String
     var title: String
     var postId: Int
@@ -23,12 +24,15 @@ public struct Post {
 }
 
 extension Post: Modelable {
+
     init(fromJSON json: JSON) throws {
         guard let postId = json["postId"].int,
             let title = json["title"].string,
             let content = json["content"].string else {
+
                 throw SAError.callApiError(reason: SAError.CallApiErrorReason.invalidJsonToObject(json: json))
         }
+
         self.postId = postId
         self.title = title
         self.content = content
@@ -36,6 +40,7 @@ extension Post: Modelable {
 }
 
 extension Post: Equatable {
+
     public static func == (lhs: Post, rhs: Post) -> Bool {
         return lhs.title == rhs.title &&
             lhs.content == rhs.content &&

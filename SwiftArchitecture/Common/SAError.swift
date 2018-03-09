@@ -9,6 +9,7 @@
 import SwiftyJSON
 
 public enum SAError: Error {
+
     case callApiError(reason: CallApiErrorReason)
 
     public enum CallApiErrorReason {
@@ -22,6 +23,7 @@ public enum SAError: Error {
 }
 
 extension SAError.CallApiErrorReason {
+
     var localizedDescription: String {
         switch self {
         case .invalidDataToJson(let data):
@@ -53,6 +55,7 @@ extension SAError.CallApiErrorReason {
 }
 
 extension SAError: LocalizedError {
+
     public var errorDescription: String? {
         switch self {
         case .callApiError(let reason):
