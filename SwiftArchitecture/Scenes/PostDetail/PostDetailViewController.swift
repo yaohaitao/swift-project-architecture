@@ -13,7 +13,6 @@ protocol PostDetailViewControllerDelegate: class {
 }
 
 class PostDetailViewController: UIViewController {
-
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
 

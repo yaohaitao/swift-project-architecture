@@ -6,11 +6,9 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
-public struct Post: Modelable {
-
+public struct Post {
     var content: String
     var title: String
     var postId: Int
@@ -22,7 +20,9 @@ public struct Post: Modelable {
         self.content = content
         self.title = title
     }
+}
 
+extension Post: Modelable {
     init(fromJSON json: JSON) throws {
         guard let postId = json["postId"].int,
             let title = json["title"].string,
@@ -36,11 +36,9 @@ public struct Post: Modelable {
 }
 
 extension Post: Equatable {
-
     public static func == (lhs: Post, rhs: Post) -> Bool {
         return lhs.title == rhs.title &&
             lhs.content == rhs.content &&
             lhs.postId == rhs.postId
     }
-
 }

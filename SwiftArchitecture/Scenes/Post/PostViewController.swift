@@ -9,7 +9,6 @@
 import UIKit
 
 protocol PostViewControllerDelegate: class {
-
     /// 刷新 Table View
     func tableViewReloadData()
 
@@ -20,7 +19,6 @@ protocol PostViewControllerDelegate: class {
 }
 
 class PostViewController: UIViewController {
-
     // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
 
@@ -42,7 +40,6 @@ class PostViewController: UIViewController {
 
     // MARK: - 私有方法
     private func configureTableView() {
-
         tableView.register(ofType: PostCell.self)
 
         tableView.estimatedRowHeight = 60
@@ -55,7 +52,6 @@ class PostViewController: UIViewController {
 
 // MARK: - 实现Delegate
 extension PostViewController: PostViewControllerDelegate {
-
     func tableViewReloadData() {
         tableView.reloadData()
     }
@@ -63,5 +59,4 @@ extension PostViewController: PostViewControllerDelegate {
     func deleteRows(indexPaths: [IndexPath]) {
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
-
 }

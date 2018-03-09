@@ -6,11 +6,9 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public enum SAError: Error {
-
     case callApiError(reason: CallApiErrorReason)
 
     public enum CallApiErrorReason {

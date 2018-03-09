@@ -11,7 +11,6 @@ import Alamofire_SwiftyJSON
 import PromiseKit
 
 class Network<ModelType: Modelable> {
-
     func getItems(url: String) -> Promise<[ModelType]> {
         return createPromiseResultWithItems(url: url, method: .get)
     }

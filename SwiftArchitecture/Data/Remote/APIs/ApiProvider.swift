@@ -6,13 +6,9 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
-
 final class ApiProvider {
-
     public func makePostApi() -> PostApi {
         let network = Network<Post>()
         return PostApi(network: network)
     }
-
 }

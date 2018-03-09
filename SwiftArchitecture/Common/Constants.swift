@@ -6,9 +6,7 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import SwiftyJSON
 
 // MARK: - 环境设置
 private enum Enviroment {
@@ -42,7 +40,6 @@ enum Config {
 
 // MARK: - URL定义
 enum URLs {
-
     static let baseURL: String = {
         switch Enviroment.currentConfig {
         case .development:

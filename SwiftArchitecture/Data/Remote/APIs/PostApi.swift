@@ -6,12 +6,10 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Alamofire
 import PromiseKit
 
 // 使っていない
 class PostApi {
-
     /// 通信用
     private let network: Network<Post>
 

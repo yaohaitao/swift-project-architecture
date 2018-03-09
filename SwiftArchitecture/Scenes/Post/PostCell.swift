@@ -9,7 +9,6 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
@@ -17,5 +16,4 @@ class PostCell: UITableViewCell {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.content
     }
-
 }

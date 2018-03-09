@@ -9,7 +9,6 @@
 import UIKit
 
 class PostNavigator {
-
     private let navigationController: UINavigationController
     private let service: PostService
 

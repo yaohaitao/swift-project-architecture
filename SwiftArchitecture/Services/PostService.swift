@@ -6,11 +6,9 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import PromiseKit
 
 protocol PostService {
-
     /// 获取全部帖子
     ///
     /// - Returns:
@@ -24,7 +22,6 @@ protocol PostService {
 }
 
 class RemotePostService: PostService {
-
     /// 通信用
     private let api: PostApi
 

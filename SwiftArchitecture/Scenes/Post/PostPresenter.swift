@@ -9,7 +9,6 @@
 import UIKit
 
 class PostPresenter: NSObject {
-
     // MARK: - 定义变量
     private let service: PostService
     private let navigator: PostNavigator
@@ -35,7 +34,6 @@ class PostPresenter: NSObject {
     }
 
     // MARK: - 初始化
-
     required init(service: PostService, navigator: PostNavigator, delegate: PostViewControllerDelegate) {
         self.service = service
         self.navigator = navigator
@@ -43,7 +41,6 @@ class PostPresenter: NSObject {
     }
 
     // MARK: - 方法
-
     func loadPosts() {
         service.getPosts()
             .done { posts in
@@ -59,7 +56,6 @@ class PostPresenter: NSObject {
     }
 
     // MARK: - 私有方法
-
     private func getCurrentPost(of indexPath: IndexPath) -> Post {
         guard let post = posts?[indexPath.row] else {
             fatalError()
@@ -70,9 +66,7 @@ class PostPresenter: NSObject {
 }
 
 // MARK: - Ext: Table View Data Source
-
 extension PostPresenter: UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = posts?.count else { return 0 }
         return count
@@ -85,13 +79,10 @@ extension PostPresenter: UITableViewDataSource {
         cell.bind(viewModel)
         return cell
     }
-
 }
 
 // MARK: - Ext: Table View Delegate
-
 extension PostPresenter: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = getCurrentPost(of: indexPath)
         self.navigator.toPostDetailView(post)
