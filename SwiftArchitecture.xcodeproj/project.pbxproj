@@ -264,7 +264,6 @@
 		799E06362048DF7800BD75F0 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				79474A24204921A500CCE27D /* PostDetail */,
 				799574B420493872009E518D /* PostNavigator.swift */,
 				7975300B2050CBAB00F7BC23 /* PostViewController.xib */,
 				799E06392048E02500BD75F0 /* PostViewController.swift */,
@@ -290,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				799E06362048DF7800BD75F0 /* Post */,
+				79474A24204921A500CCE27D /* PostDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

@@ -25,12 +25,10 @@ class Network<ModelType: Modelable> {
     }
 
     func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        // FIXME: Decide the method
         return createPromise(url: url, method: .put, parameters: parameters)
     }
 
     func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        // FIXME: Decide the method
         return createPromise(url: url, method: .delete, parameters: parameters)
     }
 
