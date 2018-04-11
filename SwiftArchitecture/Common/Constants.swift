@@ -47,17 +47,17 @@ enum URLs {
         case .development:
             return "http://localhost/EditriumAPI"
         case .continuousIntegration:
-            return "https://continuousintegration/"
+            return "https://continuousintegration"
         case .testing:
-            return "https://testing/"
+            return "https://testing"
         case .staging:
-            return "https://staging/"
+            return "https://staging"
         case .production:
-            return "https://production/"
+            return "https://production"
         }
     }()
 
-    static let postURL = URLs.baseURL + "/post.php"
+    static let postURL = URLs.baseURL + "/" + "post.php"
 }
 
 // MARK: - 颜色定义

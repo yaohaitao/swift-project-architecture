@@ -226,11 +226,18 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		7980AEDB206CBEDE00A78021 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		799E06262048D12F00BD75F0 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				799E06302048D21B00BD75F0 /* APIs */,
 				799E062E2048D21700BD75F0 /* Network.swift */,
+				799E06302048D21B00BD75F0 /* APIs */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -288,6 +295,7 @@
 		79BC996C2045318C00BD01E0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7980AEDB206CBEDE00A78021 /* Widget */,
 				799E06362048DF7800BD75F0 /* Post */,
 				79474A24204921A500CCE27D /* PostDetail */,
 			);

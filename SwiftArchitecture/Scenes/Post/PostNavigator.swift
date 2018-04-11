@@ -27,7 +27,7 @@ class PostNavigator {
         navigationController.pushViewController(vc, animated: true)
     }
 
-    func toPostDetailView(_ post: Post)
+    func toPostDetailView(_ post: Post) {
         let postDetailNavigator = PostDetailNavigator(navigationController: navigationController)
 
         let vc = PostDetailViewController()
