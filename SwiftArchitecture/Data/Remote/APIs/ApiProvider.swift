@@ -12,4 +12,9 @@ final class ApiProvider {
         let network = Network<Post>()
         return PostApi(network: network)
     }
+
+    public func makeLoginApi() -> LoginApi {
+        let network = Network<Result<User>>()
+        return LoginApi(network: network)
+    }
 }

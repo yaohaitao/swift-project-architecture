@@ -23,7 +23,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - 变量定义
-    var viewModel: PostPresenter!
+    var presenter: PostPresenter!
 
     // MARK: - View 生命周期
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class PostViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewModel.loadPosts()
+        presenter.loadPosts()
     }
 
     // MARK: - 私有方法
@@ -45,14 +45,15 @@ class PostViewController: UIViewController {
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        tableView.dataSource = self.viewModel
-        tableView.delegate = self.viewModel
+        tableView.dataSource = self.presenter
+        tableView.delegate = self.presenter
     }
+
 }
 
 // MARK: - 实现Delegate
 extension PostViewController: PostViewControllerDelegate {
-    
+
     func tableViewReloadData() {
         tableView.reloadData()
     }

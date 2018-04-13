@@ -97,4 +97,17 @@ extension PostPresenter: UITableViewDelegate {
             delegate?.deleteRows(indexPaths: [indexPath])
         }
     }
+
+    // Header
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let header = TouchIdSettingView(frame: tableView.rectForHeader(inSection: section))
+        header.touchIdSwitch.isOn = DefaultsValues.enableTouchIdLogin
+        return header
+    }
+
 }

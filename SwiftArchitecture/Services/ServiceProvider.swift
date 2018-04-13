@@ -7,7 +7,7 @@
 //
 
 final class ServiceProvider {
-    
+
     private let apiProvider: ApiProvider
 
     init() {
@@ -16,5 +16,9 @@ final class ServiceProvider {
 
     public func makePostService() -> PostService {
         return RemotePostService(api: apiProvider.makePostApi())
+    }
+
+    public func makeLoginService() -> LoginService {
+        return RemoteLoginService(api: apiProvider.makeLoginApi())
     }
 }

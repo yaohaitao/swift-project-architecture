@@ -9,7 +9,7 @@
 import Foundation
 
 class PostDetailPresenter {
-    
+
     private let navigator: PostDetailNavigator
     private weak var delegate: PostDetailViewControllerDelegate?
 

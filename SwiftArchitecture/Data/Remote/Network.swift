@@ -88,8 +88,8 @@ class Network<ModelType: Modelable> {
     }
 
     private func createRequestForItems(url: String,
-                                              method: HTTPMethod,
-                                              parameters: Parameters? = nil) -> Promise<[ModelType]> {
+                                       method: HTTPMethod,
+                                       parameters: Parameters? = nil) -> Promise<[ModelType]> {
         return Promise<[ModelType]> { resolve in
 
             Alamofire.request(url, method: method, parameters: parameters)

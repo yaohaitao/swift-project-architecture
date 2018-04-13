@@ -58,9 +58,50 @@ enum URLs {
     }()
 
     static let postURL = URLs.baseURL + "/" + "post.php"
+    static let loginURL = URLs.baseURL + "/" + "login.php"
 }
 
 // MARK: - 颜色定义
 enum Color {
     static let primaryColor = UIColor.black
+}
+
+// MARK: - 字段定义
+enum Fields {
+
+    enum User {
+        static let username = "username"
+        static let password = "password"
+    }
+
+    enum Post {
+        static let postId = "postId"
+        static let title = "tilte"
+        static let content = "content"
+    }
+
+}
+
+// MARK: - Defaults 文件中键的定义
+enum DefaultsKeys {
+    // Key<值的类型>("键")
+    static let enableTouchIdLogin = Key<Bool>("enableTouchIdLogin")
+}
+
+// MARK: - Defaults 文件中常用的值
+enum DefaultsValues {
+
+    static var enableTouchIdLogin: Bool {
+        get {
+            return Defaults.shared.get(for: DefaultsKeys.enableTouchIdLogin) ?? false
+        }
+
+        set {
+            // 当这个值发生变化的时候，发送通知
+            let notificationName = Notification.Name(rawValue: "TouchIdSetting")
+            NotificationCenter.default.post(name: notificationName, object: newValue)
+            // 将新值写入 Defaults 文件
+            Defaults.shared.set(newValue, for: DefaultsKeys.enableTouchIdLogin)
+        }
+    }
 }

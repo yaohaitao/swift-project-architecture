@@ -8,7 +8,7 @@
 
 import SwiftyJSON
 
-protocol Modelable {
-    
+public protocol Modelable {
+
     init(fromJSON json: JSON) throws
 }
