@@ -13,29 +13,31 @@ import PromiseKit
 class Network<ModelType: Modelable> {
 
     func getItems(url: String) -> Promise<[ModelType]> {
-        return createPromiseResultWithItems(url: url, method: .get)
+        return createRequestForItems(url: url, method: .get)
     }
 
     func getItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        return createPromise(url: url, method: .get, parameters: parameters)
+        return createRequest(url: url, method: .get, parameters: parameters)
     }
 
     func postItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        return createPromise(url: url, method: .post, parameters: parameters)
+        return createRequest(url: url, method: .post, parameters: parameters)
     }
 
     func updateItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        return createPromise(url: url, method: .put, parameters: parameters)
+        return createRequest(url: url, method: .put, parameters: parameters)
     }
 
     func deleteItem(url: String, parameters: Parameters) -> Promise<ModelType> {
-        return createPromise(url: url, method: .delete, parameters: parameters)
+        return createRequest(url: url, method: .delete, parameters: parameters)
     }
 
-    private func createPromise(url: String,
+    private func createRequest(url: String,
                                method: HTTPMethod,
                                parameters: Parameters) -> Promise<ModelType> {
+
         return Promise<ModelType> { resolve in
+
             Alamofire.request(url, method: method, parameters: parameters)
                 .validate()
                 .responseSwiftyJSON { dataResponse in
@@ -60,6 +62,7 @@ class Network<ModelType: Modelable> {
                                 .otherError(message: error.localizedDescription)))
                             return
                         }
+
                     case .failure(let error):
                         if case AFError.responseValidationFailed(reason: _) = error {
                             // サーバー返信に関するエラー
@@ -84,15 +87,17 @@ class Network<ModelType: Modelable> {
         }
     }
 
-    private func createPromiseResultWithItems(url: String,
-                                              method: HTTPMethod,
-                                              parameters: Parameters? = nil) -> Promise<[ModelType]> {
+    private func createRequestForItems(url: String,
+                                       method: HTTPMethod,
+                                       parameters: Parameters? = nil) -> Promise<[ModelType]> {
         return Promise<[ModelType]> { resolve in
+
             Alamofire.request(url, method: method, parameters: parameters)
                 .validate()
                 .responseSwiftyJSON { dataResponse in
 
                     switch dataResponse.result {
+
                     case .success:
 
                         let jsonData = dataResponse.value!

@@ -15,25 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         // Windowの作成
         let window = UIWindow(frame: UIScreen.main.bounds)
 
         // NavigationControllerの作成
-        let postNavigationController = UINavigationController()
+        let rootNavigationController = UINavigationController()
         // NavigationControllerのタブバーの設定
-        postNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
+        rootNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 0)
 
-        // Postの案内者を作成
-        let postService = ServiceProvider().makePostService()
-        let postNavigator = PostNavigator(service: postService, navigationController: postNavigationController)
-        // PostView画面を誘導
-        postNavigator.toPostView()
+        // Loginの案内者を作成
+        let loginService = ServiceProvider().makeLoginService()
+        let loginNavigator = LoginNavigator(navigationController: rootNavigationController, service: loginService)
+        // LoginView画面を誘導
+        loginNavigator.toLoginView()
 
         // タブバーの作成
         let tabBarController = UITabBarController()
         // NavigationControllerをタブバーに追加
         tabBarController.viewControllers = [
-            postNavigationController
+            rootNavigationController
         ]
 
         // タブターをウインドーのルートビューに設定する

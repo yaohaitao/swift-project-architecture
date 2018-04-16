@@ -24,5 +24,4 @@ class PostDetailPresenter {
         self.navigator = navigator
         self.delegate = delegate
     }
-
 }

@@ -17,5 +17,4 @@ class PostCell: UITableViewCell {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.content
     }
-
 }

@@ -6,9 +6,10 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
-protocol Modelable {
+/// JSONオブジェクトでモデルを初期化できるために、このプロトコルを実行する。
+public protocol Modelable {
+
     init(fromJSON json: JSON) throws
 }

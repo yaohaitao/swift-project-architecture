@@ -9,7 +9,6 @@
 import UIKit
 
 protocol PostViewControllerDelegate: class {
-
     /// テーブルビューは全てのデータを再読み込む
     func tableViewReloadData()
 
@@ -20,12 +19,11 @@ protocol PostViewControllerDelegate: class {
 }
 
 class PostViewController: UIViewController {
-
     // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - 変数の定義
-    var viewModel: PostPresenter!
+    var presenter: PostPresenter!
 
     // MARK: - Viewのライフサイクル
     override func viewDidLoad() {
@@ -37,20 +35,20 @@ class PostViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewModel.loadPosts()
+        presenter.loadPosts()
     }
 
     // MARK: - プライペート方法の定義
     private func configureTableView() {
-
         tableView.register(ofType: PostCell.self)
 
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        tableView.dataSource = self.viewModel
-        tableView.delegate = self.viewModel
+        tableView.dataSource = self.presenter
+        tableView.delegate = self.presenter
     }
+
 }
 
 // MARK: - Delegateの実装
@@ -63,5 +61,4 @@ extension PostViewController: PostViewControllerDelegate {
     func deleteRows(indexPaths: [IndexPath]) {
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
-
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public enum SAError: Error {
@@ -24,6 +23,7 @@ public enum SAError: Error {
 }
 
 extension SAError.CallApiErrorReason {
+
     var localizedDescription: String {
         switch self {
         case .invalidDataToJson(let data):
@@ -55,6 +55,7 @@ extension SAError.CallApiErrorReason {
 }
 
 extension SAError: LocalizedError {
+
     public var errorDescription: String? {
         switch self {
         case .callApiError(let reason):

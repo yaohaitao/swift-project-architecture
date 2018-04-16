@@ -9,6 +9,7 @@
 import UIKit
 
 class PostDetailNavigator {
+
     private let navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

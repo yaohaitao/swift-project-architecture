@@ -23,6 +23,7 @@ extension UITableViewCell: Reusable {}
 extension UIViewController: Reusable {}
 
 extension UITableView {
+
     func dequeueReusableCell<T>(ofType cellType: T.Type = T.self, at indexPath: IndexPath) ->
         T where T: UITableViewCell {
         guard let cell = dequeueReusableCell(withIdentifier: cellType.reuseID,
@@ -39,6 +40,7 @@ extension UITableView {
 }
 
 extension UIStoryboard {
+
     func instantiateViewController<T>(ofType type: T.Type = T.self) -> T where T: UIViewController {
         guard let viewController = instantiateViewController(withIdentifier: type.reuseID) as? T else {
             fatalError()

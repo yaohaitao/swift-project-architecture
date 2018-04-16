@@ -21,15 +21,16 @@ class PostNavigator {
 
     func toPostView() {
         let vc = PostViewController()
-        vc.viewModel = PostPresenter(service: service, navigator: self, delegate: vc)
+        vc.presenter = PostPresenter(service: service, navigator: self, delegate: vc)
         vc.navigationItem.title = "Post"
 
         navigationController.pushViewController(vc, animated: true)
     }
 
     func toPostDetailView(_ post: Post) {
-        let vc = PostDetailViewController()
         let postDetailNavigator = PostDetailNavigator(navigationController: navigationController)
+
+        let vc = PostDetailViewController()
         vc.viewModel = PostDetailPresenter(post: post, navigator: postDetailNavigator, delegate: vc)
         vc.navigationItem.title = post.title
 

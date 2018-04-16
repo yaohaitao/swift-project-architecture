@@ -6,17 +6,15 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
 import PromiseKit
 
 protocol PostService {
-
-    /// 全部のPostを取得
+    /// 全部のPostを取得する
     ///
     /// - Returns:
     func getPosts() -> Promise<[Post]>
 
-    /// PostIdで、Postオブジェクトを取得
+    /// PostIdで、Postオブジェクトを取得する
     ///
     /// - Parameter postId: ポストのID
     /// - Returns:
@@ -24,7 +22,6 @@ protocol PostService {
 }
 
 class RemotePostService: PostService {
-
     /// 通信用
     private let api: PostApi
 

@@ -6,9 +6,8 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
-
 class PostCellPresenter {
+
     let title: String
     let content: String
     let post: Post

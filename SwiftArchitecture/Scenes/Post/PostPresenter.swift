@@ -49,7 +49,6 @@ class PostPresenter: NSObject {
     }
 
     // MARK: - 方法
-
     func loadPosts() {
         service.getPosts()
             .done { posts in
@@ -65,7 +64,6 @@ class PostPresenter: NSObject {
     }
 
     // MARK: - プライペート方法
-
     private func getCurrentPost(of indexPath: IndexPath) -> Post {
         guard let post = posts?[indexPath.row] else {
             fatalError()
@@ -76,7 +74,6 @@ class PostPresenter: NSObject {
 }
 
 // MARK: - Ext: Table View Data Source
-
 extension PostPresenter: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,11 +88,9 @@ extension PostPresenter: UITableViewDataSource {
         cell.bind(viewModel)
         return cell
     }
-
 }
 
 // MARK: - Ext: Table View Delegate
-
 extension PostPresenter: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -110,4 +105,18 @@ extension PostPresenter: UITableViewDelegate {
             delegate?.deleteRows(indexPaths: [indexPath])
         }
     }
+
+    // TouchIdスイッチビューの高さの設定
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+    // TouchIdスイッチの作成
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // スイッチビューの初期化
+        let header = TouchIdSettingView(frame: tableView.rectForHeader(inSection: section))
+        // ユーザーデフォルトから、TouchIdを可能になるかどうかを判定して、スイッチの状態を決定すると
+        header.touchIdSwitch.isOn = DefaultsValues.enableTouchIdLogin
+        return header
+    }
+
 }

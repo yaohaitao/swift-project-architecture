@@ -6,8 +6,6 @@
 //  Copyright © 2018年 yaohaitao. All rights reserved.
 //
 
-import Foundation
-
 final class ApiProvider {
 
     public func makePostApi() -> PostApi {
@@ -15,4 +13,8 @@ final class ApiProvider {
         return PostApi(network: network)
     }
 
+    public func makeLoginApi() -> LoginApi {
+        let network = Network<Result<User>>()
+        return LoginApi(network: network)
+    }
 }
