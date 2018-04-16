@@ -21,14 +21,18 @@ class BiometricsAuthentication {
 
         if canEvaluatePolicy {
             authenticationContext.localizedFallbackTitle = ""
-            authenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
-                                                 localizedReason: reason) { success, error in
-                if success {
-                    successHandler()
-                } else {
-                    NSLog(error!.localizedDescription)
-//                    errorHandler(error!)
-                }
+            authenticationContext.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: reason) { success, error in
+
+                    OperationQueue.main.addOperation {
+                        if success {
+                            successHandler()
+                        } else {
+                            NSLog(error!.localizedDescription)
+                            //                    errorHandler(error!)
+                        }
+                    }
             }
         } else {
             NSLog(error!.localizedDescription)
